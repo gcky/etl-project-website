@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <div class="page-content">
+      <div class="wrapper">
+
+          {{ content }}
+        
+        <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>

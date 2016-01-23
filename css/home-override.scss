@@ -1,0 +1,22 @@
+---
+---
+
+/* Header Colour */
+$indigo: rgba(26,35,126,0.9);
+$green: rgba(27,94,32,0.9);
+$menu-colours: $green, $indigo;
+$menu-key: random(length($menu-colours));
+$menu-rdm: nth($menu-colours, $menu-key);
+$menu-c: $menu-rdm;
+
+@mixin backgrounds($c) {
+    & { background: $c }
+}
+
+#normalHeadMenu {
+    @include backgrounds($menu-c);
+}
+
+#normalHeadMenu, #homeHead {
+    @include backgrounds($menu-c);
+}
