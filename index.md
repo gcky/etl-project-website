@@ -2,9 +2,9 @@
 layout: home
 ---
 
-<div class="btn btn-alert btn-snack" href="{{site.baseurl}}/requirements.html">
+<!--<div class="btn btn-alert btn-snack" href="{{site.baseurl}}/requirements.html">
 <strong>Hello there!</strong> This website is still a Work In Progress, but feel free to have a look around!
-</div>
+</div>-->
 
 # Introduction
 

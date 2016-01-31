@@ -8,6 +8,8 @@ layout: default
 
 These reports are produced fortnightly by the team which record the progress of the project.<br><br>
 
+### Term 1
+
 <a class="btn btn-short" href="{{site.baseurl}}/biweekly/16-10.html">Week 1-2 (October 16)</a>
 
 <a class="btn btn-short" href="{{site.baseurl}}/biweekly/30-10.html">Week 3-4 (October 30)</a>
@@ -17,3 +19,7 @@ These reports are produced fortnightly by the team which record the progress of 
 <a class="btn btn-short" href="{{site.baseurl}}/biweekly/27-11.html">Week 7-8 (November 27)</a>
 
 <a class="btn btn-short" href="{{site.baseurl}}/biweekly/11-12.html">Week 9-10 (December 11)</a>
+
+### Term 2
+
+<a class="btn btn-short" href="{{site.baseurl}}/biweekly/29-01.html">Week 11-12 (January 29)</a>

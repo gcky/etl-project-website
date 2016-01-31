@@ -16,7 +16,7 @@ title: Sitemap | ETL for Data Science
   * [User Interface Design and Development]({{site.baseurl}}/ui.html)
 * [Prototypes]({{site.baseurl}}/prototypes.html)
 * [Testing]({{site.baseurl}}/testing.html)
-* [Meta]({{site.baseurl}}/misc.html)
+* [Meta]({{site.baseurl}}/meta.html)
   * [Project Management]({{site.baseurl}}/project-management.html)
   * [Bi-Weekly Reports]({{site.baseurl}}/biweekly.html)
     * [Bi-Weekly Report 1]({{site.baseurl}}/biweekly/16-10.html)
