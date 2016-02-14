@@ -23,3 +23,5 @@ These reports are produced fortnightly by the team which record the progress of 
 ### Term 2
 
 <a class="btn btn-short" href="{{site.baseurl}}/biweekly/29-01.html">Week 11-12 (January 29)</a>
+
+<a class="btn btn-short" href="{{site.baseurl}}/biweekly/12-02.html">Week 13-14 (February 12)</a>
