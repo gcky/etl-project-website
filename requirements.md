@@ -124,7 +124,7 @@ This is a list of all the requirements as agreed with our client. These requirem
 <td>Should</td>
 </tr>
 <tr><td>Lc1</td>
-<td>The DCS shall support loading of user-uploaded structured file formats (JSON, XML).</td>
+<td>The DCS shall support loading of user-uploaded structured file formats (JSON, Excel).</td>
 <td>Functional</td>
 <td>Data Loading</td>
 <td>Could</td>
@@ -336,12 +336,6 @@ This is a list of all the requirements as agreed with our client. These requirem
 <td>Must</td>
 </tr>
 <tr><td>Vm2</td>
-<td>The DCS shall be able to visualise data using bar charts</td>
-<td>Functional</td>
-<td>Data Visualisation</td>
-<td>Must</td>
-</tr>
-<tr><td>Vm3</td>
 <td>The DCS shall be able to visualise data using line charts</td>
 <td>Functional</td>
 <td>Data Visualisation</td>
@@ -359,20 +353,26 @@ This is a list of all the requirements as agreed with our client. These requirem
 <td>Data Visualisation</td>
 <td>Should</td>
 </tr>
-<tr><td>Vs3</td>
-<td>The DCS shall be able to visualise data using pie charts</td>
-<td>Functional</td>
-<td>Data Visualisation</td>
-<td>Should</td>
-</tr>
 <tr><td>Vc1</td>
 <td>The DCS shall provide the option to export graphs to image</td>
 <td>Functional</td>
 <td>Data Visualisation</td>
 <td>Could</td>
 </tr>
+<tr><td>Vc2</td>
+<td>The DCS shall be able to visualise data using pie charts</td>
+<td>Functional</td>
+<td>Data Visualisation</td>
+<td>Could</td>
+</tr>
 <tr><td>Vw1</td>
 <td>The DCS shall be able to visualise data using regression matricies</td>
+<td>Functional</td>
+<td>Data Visualisation</td>
+<td>Would</td>
+</tr>
+<tr><td>Vw2</td>
+<td>The DCS shall be able to visualise data using bar charts</td>
 <td>Functional</td>
 <td>Data Visualisation</td>
 <td>Would</td>
@@ -386,48 +386,24 @@ This is a list of all the requirements as agreed with our client. These requirem
 <td>Must</td>
 </tr>
 <tr><td>Nm2</td>
-<td>The DCS shall have an uptime of 99%</td>
-<td>Non-Functional</td>
-<td>Availability</td>
-<td>Must</td>
-</tr>
-<tr><td>Nm3</td>
-<td>The DCS shall support the latest versions of Internet Explorer, Chrome, Firefox</td>
+<td>The DCS shall support the latest versions of Safari, Internet Explorer, Chrome, Firefox</td>
 <td>Non-Functional</td>
 <td>Performance</td>
 <td>Must</td>
 </tr>
-<tr><td>Nm4</td>
+<tr><td>Nm3</td>
 <td>The DCS shall be easily installable by an untrained user with the help of documentation</td>
 <td>Non-Functional</td>
 <td>Deployment</td>
 <td>Must</td>
 </tr>
-<tr><td>Ns1</td>
-<td>The DCS shall ensure that a potential user is able to carry out any task in 5 minutes</td>
-<td>Non-Functional</td>
-<td>Ease Of Use</td>
-<td>Should</td>
-</tr>
-<tr><td>Ns2</td>
-<td>The DCS shall have a user interface that has a user satisfaction rate of 90%</td>
-<td>Non-Functional</td>
-<td>Ease of Use</td>
-<td>Should</td>
-</tr>
 <tr><td>Nc1</td>
-<td>The DCS shall ensure that a user is able to complete all task in 5 clicks</td>
-<td>Non-Functional</td>
-<td>Ease of Use</td>
-<td>Could</td>
-</tr>
-<tr><td>Nc2</td>
 <td>The DCS shall ensure that error messages give the users specific instructions for recovery</td>
 <td>Non-Functional</td>
 <td>Ease of Use</td>
 <td>Could</td>
 </tr>
-<tr><td>Nc3</td>
+<tr><td>Nc2</td>
 <td>The DCS shall ensure that a users persistence data has an availability of 100%</td>
 <td>Non-Functional</td>
 <td>Availability</td>

@@ -13,13 +13,29 @@
     }
 </style>-->
 
+<!-- STYLES OVERRIDE -->
+
 <style>
+    #showA:checked ~ label span {
+        color: #37474F !important;
+    }
+    #normalHeadMenu {
+        background-color: #37474F
+;
+        box-shadow: none;
+    }
+    #normalMenu {
+        padding-top: 4px;
+    }
     #normalHeadMenu .headerContentWrapper #fullWidthBar li {
         border: none;
         padding: 2px 15px 2px 15px !important;
     }
-    #normalMenu {
-        padding-top: 4px;
+    #normalHeadMenu .headerContentWrapper #fullWidthBar li a {
+        color: rgba(255,255,255,0.7) !important;
+    }
+    #showButtonA label span {
+        color: rgba(255,255,255,0.7) !important;
     }
     #normalHeadMenu .headerContentWrapper {
         display: flex;
@@ -40,7 +56,7 @@
         
         <div id="normalHeadMenu" class="headMenu">
             
-            {% include fixed-menu.html %}
+            {% include product-fixed-menu.html %}
             
             <div class="headerContentWrapper">
                 
@@ -54,12 +70,9 @@
                     <div id="normalMenu" class="barWrapper">
 
         <ul id="fullWidthBar" class="menuBar">
+            <li><a class="menuItem" href="{{ site.baseurl }}/background.html">Download</a></li>
+            <li><a class="menuItem" href="{{ site.baseurl }}/docs.html">Docs</a></li>
             <li><a class="menuItem" href="{{ site.baseurl }}/project-home.html">Project</a></li>
-            <li><a class="menuItem" href="{{ site.baseurl }}/background.html">Background</a></li>
-            <li><a class="menuItem" href="{{ site.baseurl }}/requirements.html">Requirements</a></li>
-            <li><a class="menuItem" href="{{ site.baseurl }}/development.html">Development</a></li>
-            <li><a class="menuItem" href="{{ site.baseurl }}/testing.html">Testing</a></li>
-            <li><a class="menuItem" href="{{ site.baseurl }}/meta.html">Meta</a></li>
             <li><a href="https://github.com/SeldonIO/seldon-ucl"><img id="github-tweaked" src="{{ site.baseurl }}/assets/github-mark.png"></a></li>
         </ul>
 

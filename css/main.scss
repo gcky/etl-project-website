@@ -524,21 +524,21 @@ table.invisible, table.invisible td {
 
 /* RESPONSIVE DESIGN */
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1300px) {
     div.content, div.headerContentWrapper, div.barWrapper, div.footer {
         margin-left: 12%;
         margin-right: 12%;
     }
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1100px) {
     div.content, div.headerContentWrapper, div.barWrapper, div.footer {
         margin-left: 5%;
         margin-right: 5%;
     }
 }
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 870px) {
     div.barWrapper {
         display: none;
     }
@@ -741,7 +741,7 @@ table.invisible, table.invisible td {
         left: calc(95% - 80px);
     }
 }
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 870px) {
     #showButtonA {
         display: block;
     }
