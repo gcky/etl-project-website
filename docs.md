@@ -7,15 +7,15 @@ title: Docs | Willow
 
 ## Get Started
 
-- ### Installation Instructions
-- ### Documentation for Users
+- Installation Instructions
+- [Documentation for Users]({{ site.baseurl }}/user-docs.html)
 
 ## Get Help
 
-- ### Troubleshoot
-- ### Community Forum
+- Troubleshoot
+- Community Forum
 
 ## More...
 
-- ### Documentation for Developers
-- ### Project Website
+- Documentation for Developers
+- Project Website

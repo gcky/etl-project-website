@@ -13,7 +13,31 @@ a, a:visited, h1, h2, h3, h6 {
 }
 
 .productLogo {
-    margin: 0 auto;
+    position: absolute;
+    left: calc(50% - 100px);
+}
+
+#logoBack { z-index: 10; }
+#logoCube { z-index: 20; }
+#logoFront { z-index: 30; }
+
+@keyframes floatingCube {
+    from {
+        -ms-transform: translateY(-5px); /* IE 9 */
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
+        opacity: 1;
+    }
+    to {
+        -ms-transform: translateY(-20px); /* IE 9 */
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+        opacity: 0.8;
+    }
+}
+
+#logoCube {
+    animation: floatingCube 3s ease-in-out infinite alternate;
 }
 
 .screenshot {
@@ -27,9 +51,10 @@ iframe.screenshot {
 
 #productLogoWrapper {
     width: 100%;
+    height: 250px;
     text-align: center;
     padding-top: 50px;
-    margin-bottom: -50px;
+    margin-bottom: -40px;
 }
 
 .screenshotWrapper {
@@ -39,9 +64,11 @@ iframe.screenshot {
 
 #logoTitle {
     font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-weight: 100;
-    letter-spacing: 5px;
+    font-size: 35px;
+    font-weight: 300;
+    letter-spacing: 10px;
     margin-bottom: 0;
+    text-transform: uppercase;
 }
 
 #logoSubTitle {

@@ -6,9 +6,9 @@ layout: home
 <strong>Hello there!</strong> This website is still a Work In Progress, but feel free to have a look around!
 </div>-->
 
-<!--<div class="btn">
+<div class="btn">
 Looking for Willow? Click <a href="{{site.baseurl}}/">here</a>.
-</div>-->
+</div>
 
 # Introduction
 
