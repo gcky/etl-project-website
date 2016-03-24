@@ -3,7 +3,7 @@
 ---
 
 $logo-height: 22px;
-$default-margin: 20%;
+$default-margin: 18%;
 $header-height: 64px;
 $normalLinear-width: 675px;
 
@@ -319,7 +319,7 @@ a.menuItem {
 #homeHead .headerContentWrapper {
     position: relative;
     align-self: center;
-    animation: slideIn 0.8s forwards;
+    animation: slideIn 0.5s forwards;
     padding-top: 30px;
     margin: 0 auto 0 auto;
 }
@@ -327,12 +327,23 @@ a.menuItem {
 @keyframes slideIn {
     0% {
         opacity: 0;
-        top: 30px;
+        /*top: 30px;*/
+        -ms-transform: translateY(30px);
+        -webkit-transform: translateY(30px);
+        transform: translateY(30px);
     }
     100% {
         opacity: 1;
-        top: 0px;
+        /*top: 0px;*/
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
     }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
 }
 
 #homeHead .headerContentWrapper .linearMenu {
@@ -350,7 +361,7 @@ div.content {
     margin-right: $default-margin;
     margin-top: 90px;
     padding-bottom: 30px;
-    animation: slideIn 0.5s forwards;
+    animation: fadeIn 0.5s forwards;
 }
 
 #homeContent {
@@ -458,7 +469,7 @@ iframe.gd {
     position: fixed;
     bottom: 0;
     left: 0;
-    animation: slideInBtn 1s none, slideOutBtn 1s 10s forwards;
+    animation: slideInBtn 1s none/*, slideOutBtn 1s 10s forwards*/;
 }
 
 .btn-snack a {
@@ -540,11 +551,9 @@ table.invisible, table.invisible td {
 
 .tableOfContents {
     width: 300px;
-    padding: 5px 20px 0 0;
-    margin: 20px 0;
-    border: 1px solid #90A4AE;
-    border-radius: 5px;
-    background-color: #EEEEEE;
+    padding: 0 20px 0 0;
+    margin: 10px 0;
+    border-left: 3px solid #CFD8DC;
 }
 
 .tableOfContents p {

@@ -1,0 +1,382 @@
+body {
+  background-color: #37474F;
+  color: white;
+}
+
+.haltAnimations *:not(.loading) {
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  -ms-animation: none !important;
+  -o-animation: none !important;
+  animation: none !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes logoFlyIn {
+  from {
+    -ms-transform: translateY(50px);
+    /* IE 9 */
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    -ms-transform: translateY(0);
+    /* IE 9 */
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes cubeFlyIn {
+  from {
+    -ms-transform: translateY(-100px);
+    /* IE 9 */
+    -webkit-transform: translateY(-100px);
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    -ms-transform: translateY(-5px);
+    /* IE 9 */
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+    opacity: 1;
+  }
+}
+
+@keyframes floatingCube {
+  from {
+    -ms-transform: translateY(-5px);
+    /* IE 9 */
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+    opacity: 1;
+  }
+  to {
+    -ms-transform: translateY(-20px);
+    /* IE 9 */
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+    opacity: 0.7;
+  }
+}
+
+@keyframes rotate360 {
+  0% {
+    -ms-transform: rotate(0);
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    -ms-transform: translate(0);
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  25% {
+    -ms-transform: translate(-5px);
+    -webkit-transform: translate(-5px);
+    transform: translate(-5px);
+  }
+  50% {
+    -ms-transform: translate(0);
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  75% {
+    -ms-transform: translate(5px);
+    -webkit-transform: translate(5px);
+    transform: translate(5px);
+  }
+  100% {
+    -ms-transform: translate(0);
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+
+.loading {
+  position: fixed;
+  z-index: 30;
+  width: 300px;
+  height: 300px;
+  left: calc(50% - 150px);
+  top: calc(50% - 150px);
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 150px;
+  opacity: 0.05;
+  overflow: hidden;
+}
+
+#loading1 {
+  animation: wiggle 8s 0.5s linear infinite reverse;
+}
+
+#loading2 {
+  animation: wiggle 8s 0.5s linear infinite normal;
+}
+
+#homeContent {
+  opacity: 0;
+  animation: fadeIn 0.5s linear forwards;
+}
+
+.productLogo {
+  opacity: 0;
+  position: absolute;
+  left: calc(50% - 105px);
+  animation: logoFlyIn 3s cubic-bezier(0.075, 0.820, 0.165, 1.000) forwards;
+}
+
+#logoBack {
+  z-index: 20;
+}
+
+#logoCube {
+  z-index: 21;
+}
+
+#logoFront {
+  z-index: 22;
+}
+
+#logoCube {
+  animation: cubeFlyIn 3s cubic-bezier(0.075, 0.820, 0.165, 1.000) 1 forwards, floatingCube 3s 3s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate;
+}
+
+hr {
+  border: 1px solid #B0BEC5;
+}
+
+a,
+a:visited,
+h1,
+h2,
+h3,
+h6 {
+  color: white;
+  text-align: center;
+}
+
+.screenshot {
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+}
+
+iframe.screenshot {
+  max-height: none;
+  max-width: none;
+}
+
+#productLogoWrapper {
+  width: 100%;
+  height: 250px;
+  text-align: center;
+  padding-top: 50px;
+  margin-bottom: -40px;
+}
+
+.screenshotWrapper {
+  width: 100%;
+  text-align: center;
+}
+
+#logoTitle {
+  font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 35px;
+  font-weight: 300;
+  letter-spacing: 10px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
+#logoTitle sup {
+  color: #FFD600;
+  letter-spacing: 5px;
+  font-size: 0.5em;
+}
+
+#logoSubTitle {
+  font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 0.95em;
+  letter-spacing: 3px;
+  word-spacing: 1px;
+  margin: 0 0 50px 0;
+  padding: 0;
+}
+
+#logosWrapper {
+  margin: 0 0 80px 0;
+  width: 100%;
+  text-align: center;
+}
+
+.subTitle {
+  font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 0.95em;
+  letter-spacing: 3px;
+  word-spacing: 5px;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
+.orgLogo {
+  height: 30px;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.orgLogo#ucle {
+  height: 26px;
+  padding: 2px 5px;
+  background-color: #546E7A;
+}
+
+.orgLogo#uclcs {
+  height: 30px;
+  padding: 0;
+  background-color: #546E7A;
+}
+
+.orgLogo#ucl {
+  height: 30px;
+  padding: 0;
+  background-color: white;
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
+.productDescriptor {
+  padding: 10px 0;
+  width: 100%;
+  text-align: center;
+}
+
+.productTitle {
+  font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.productText {
+  font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  text-align: center;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 0;
+  margin: 0;
+  padding-top: 56.25%;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.videoWrapper iframe,
+.videoWrapper object,
+.videoWrapper embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%
+}
+
+.downloadGraphicsWrapper {
+  height: 250px;
+  text-align: center;
+}
+
+.downloadGraphics {
+  height: 100%;
+}
+
+.btn.download {
+  background-color: transparent;
+  border: solid 1px rgba(255,255,255,0.5);
+  color: white !important;
+  font-family: Work Sans, sans-serif;
+  text-transform: uppercase;
+  font-size: 0.95em;
+  -webkit-transition: border-color 0.1s linear;
+  -ms-transition: border-color 0.1s linear;
+  transition: border-color 0.1s linear;
+}
+
+.btn.download:hover {
+  border-color: rgba(255,255,255,1);
+}
+
+.stepBlock {
+  opacity: 0;
+  padding-bottom: 20px;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+#ready {
+  background-color: #455A64;
+  animation-delay: 0.1s;
+  padding-bottom: 0;
+}
+
+#installVagrant {
+  background-color: #009688;
+  animation-delay: 0.2s;
+}
+
+#downloadTungsten {
+  background-color: #039BE5;
+  animation-delay: 0.3s;
+}
+
+#setupVM {
+  background-color: #5E35B1;
+  animation-delay: 0.4s;
+}
+
+#finish {
+  background-color: #4CAF50;
+  animation-delay: 0.5s;
+}
+
+#normalContent {
+  width: 100%;
+  margin: 59px 0 0 0;
+  padding-bottom: 0;
+}

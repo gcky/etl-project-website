@@ -1,70 +1,79 @@
 <style>
-    #showA:checked ~ label span {
-        color: #37474F !important;
-    }
-    #normalHeadMenu {
-        background-color: #37474F
-;
-        box-shadow: none;
-    }
-    #normalMenu {
-        padding-top: 4px;
-    }
-    #normalHeadMenu .headerContentWrapper #fullWidthBar li {
-        border: none;
-        padding: 2px 15px 2px 15px !important;
-    }
-    #normalHeadMenu .headerContentWrapper #fullWidthBar li a {
-        color: rgba(255,255,255,0.7) !important;
-    }
-    #showButtonA label span {
-        color: rgba(255,255,255,0.7) !important;
-    }
-    #normalHeadMenu .headerContentWrapper {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-    .filler {
-        flex-grow: 2;
-    }
-    #normalLinear {
-        left: 0;
-    }
+  #showA:checked ~ label span {
+    color: #37474F !important;
+  }
+  
+  #normalHeadMenu {
+    background-color: #37474F;
+    box-shadow: none;
+  }
+  
+  #normalMenu {
+    padding-top: 4px;
+  }
+  
+  #normalHeadMenu .headerContentWrapper #fullWidthBar li {
+    border: none;
+    padding: 2px 15px 2px 15px !important;
+  }
+  
+  #normalHeadMenu .headerContentWrapper #fullWidthBar li a {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+  
+  #showButtonA label span {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+  
+  #normalHeadMenu .headerContentWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .filler {
+    flex-grow: 2;
+  }
+  
+  #normalLinear {
+    left: 0;
+  }
 </style>
 
 <header class="site-header">
 
-<!-- TITLE & MENU -->
-        
-        <div id="normalHeadMenu" class="headMenu">
-            
-            {% include product-fixed-menu.html %}
-            
-            <div class="headerContentWrapper">
-                
-                <div id="smallLogo" class="linearMenu">
-                    <a href="{{ site.baseurl }}/"><img id="logo" src="{{ site.baseurl }}/assets/logo.png"></a>
-                </div>
-                
-                <div class="filler"></div>
-                
-                <div id="normalLinear" class="linearMenu">
-                    <div id="normalMenu" class="barWrapper">
+  <!-- TITLE & MENU -->
 
-        <ul id="fullWidthBar" class="menuBar">
-            <li><a class="menuItem" href="{{ site.baseurl }}/background.html">Download</a></li>
-            <li><a class="menuItem" href="{{ site.baseurl }}/docs.html">Docs</a></li>
+  <div id="normalHeadMenu" class="headMenu">
+
+    {% include product-fixed-menu.html %}
+
+    <div class="headerContentWrapper">
+
+      <div id="smallLogo" class="linearMenu">
+        <a href="{{ site.baseurl }}/"><img id="logo" src="{{ site.baseurl }}/assets/logo.png"></a>
+      </div>
+
+      <div class="filler"></div>
+
+      <div id="normalLinear" class="linearMenu">
+        <div id="normalMenu" class="barWrapper">
+
+          <ul id="fullWidthBar" class="menuBar">
+            <li><a class="menuItem" href="{{ site.baseurl }}/download.html">Download</a></li>
+            <li><a class="menuItem" href="{{ site.baseurl }}/user-docs.html">Docs</a></li>
             <li><a class="menuItem" href="{{ site.baseurl }}/project-home.html">Project</a></li>
-            <li><a href="https://github.com/SeldonIO/seldon-ucl"><img id="github-tweaked" src="{{ site.baseurl }}/assets/github-mark.png"></a></li>
-        </ul>
+            <li>
+              <a href="https://github.com/SeldonIO/seldon-ucl"><img id="github-tweaked" src="{{ site.baseurl }}/assets/github-mark.png"></a>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
 
     </div>
-                    
-                </div>
-            
-            </div>
-            
-        </div>
+
+  </div>
 
 </header>

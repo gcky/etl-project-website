@@ -1,14 +1,17 @@
 ---
 layout: docs
-title: User Documentation | Iodine
+title: User Documentation | Tungsten
 ---
+
+<div class="btn btn-alert">
+This page is a work-in-progress, some descriptions may be incomplete/inaccurate. If you have any queries, please contact the team via our GitHub repo.
+</div>
 
 <a class="anchor" id="load"></a>
 
 # Data Uploading and Downloading
 
 <div class="tableOfContents">
-    <p><strong>Contents</strong></p>
     <ol>
         <li><a href="#load-upload">Uploading Data</a>
             <ol type="a">
@@ -24,33 +27,33 @@ title: User Documentation | Iodine
 
 ## Uploading Data
 
-You need to first upload your data into Iodine in order to perform any operations. Uploading a dataset creates a new Iodine project. Unlike common web services, *uploading* a file in Iodine actually stores the project locally on your computer and **not** on the internet. This means that Iodine works even if you're offline! Iodine currently supports **CSV**, **JSON**, **XLS**, and **XLSX** formatted data files.
+You need to first upload your data into Tungsten in order to perform any operations. Uploading a dataset creates a new Tungsten project. Unlike common web services, *uploading* a file in Tungsten actually stores the project locally on your computer and **not** on the internet. This means that Tungsten works even if you're offline! Tungsten currently supports **CSV**, **JSON**, **XLS**, and **XLSX** formatted data files.
 
-When you access Iodine using the appropriate address in your web browser, you will be directed to the Upload page. To upload a new file, click the gray box in the middle. This will open a file explorer, simply select the file you want and click *Open*. Alternatively, you can select a file by dragging the file inside the gray box. Click *Upload* to upload the selected file. If the upload is successful, you will be directed to the clean tab in main page.
+When you access Tungsten using the appropriate address in your web browser, you will be directed to the Upload page. To upload a new file, click the gray box in the middle. This will open a file explorer, simply select the file you want and click *Open*. Alternatively, you can select a file by dragging the file inside the gray box. Click *Upload* to upload the selected file. If the upload is successful, you will be directed to the clean tab in main page.
 
 <a class="anchor" id="load-upload-largeFiles"></a>
 
-### **Large Files**
+### Large Files
 
-If you select a large file to upload, the advanced options section will expand automatically and warn you about potential performance issues. This is because even with the optimisations we have implemented in Iodine for dealing with large datasets, its performance will unavoidably degrade as the file size increases.
+If you select a large file to upload, the advanced options section will expand automatically and warn you about potential performance issues. This is because even with the optimisations we have implemented in Tungsten for dealing with large datasets, its performance will unavoidably degrade as the file size increases.
 
-In this situation, you can choose to upload your file anyway. However, **do** expect degraded performances from Iodine. Alternatively, if you don't need all of the data in the file, you can select a random sample of your dataset by specifying a percentage (0, 100] under *Advanced Options*. You can also select a seed so you can retrieve the same sample again in the future.
+In this situation, you can choose to upload your file anyway. However, **do** expect degraded performances from Tungsten. Alternatively, if you don't need all of the data in the file, you can select a random sample of your dataset by specifying a percentage (0, 100] under *Advanced Options*. You can also select a seed so you can retrieve the same sample again in the future.
 
 <a class="anchor" id="load-upload-commonIssues"></a>
 
-### **Common Issues**
+### Common Issues
 
 #### Comments at the start of the file
 
-- Some CSV/XLSX files have comments at the start of the file which are not part of the dataset. While Iodine may accept the file, the resulting data structure will likely not to be correct. Luckily, under *Advanced Options*, you can specify the number of initial lines to ignore when uploading your file. If you do so, Iodine will skip those lines when parsing your file.
+- Some CSV/XLSX files have comments at the start of the file which are not part of the dataset. While Tungsten may accept the file, the resulting data structure will likely not to be correct. Luckily, under *Advanced Options*, you can specify the number of initial lines to ignore when uploading your file. If you do so, Tungsten will skip those lines when parsing your file.
 
 #### Invalid formats
 
-- While Iodine is a great tool for cleaning datasets, it wasn't built for dealing with invalid data files. (e.g. missing commas in CSVs) If your data files have such issues, you will have to fix them before being able to upload them into Iodine.
+- While Tungsten is a great tool for cleaning datasets, it wasn't built for dealing with invalid data files. However, it will make its best attempt at parsing your file by **removing** invalid records. If Tungsten was not able to parse your file, you will have to fix them before being able to upload them into Tungsten.
 
 #### Text encoding issues
 
-- Text encoding discrepancies may result in Iodine not accepting your file. Iodine works in **UTF-8**, while it will do its best to detect the encoding of your file using the excellent [chardet](https://chardet.github.io/) library and convert it to UTF-8, it doesn't always succeed. In these cases, you will have to convert the file yourself before uploading it again.
+- Text encoding discrepancies may result in Tungsten not accepting your file. Tungsten works in **UTF-8**, while it will do its best to detect the encoding of your file using the excellent [chardet](https://chardet.github.io/) library and convert it to UTF-8, it doesn't always succeed. In these cases, you will have to convert the file yourself before uploading it again.
 
 <br>
 <hr>
@@ -58,10 +61,9 @@ In this situation, you can choose to upload your file anyway. However, **do** ex
 
 # Data Viewing
 
-After Iodine has successfully parsed your data file, you will be directed to the **Clean** tab in the main page. The Clean tab consists of two parts, the toolbar on the right and the data table on the left.
+After Tungsten has successfully parsed your data file, you will be directed to the **Clean** tab in the main page. The Clean tab consists of two parts, the toolbar on the right and the data table on the left.
 
 <div class="tableOfContents">
-    <p><strong>Contents</strong></p>
     <ol>
         <li><a href="#view-layout">Layout</a>
             <ol type="a">
@@ -87,7 +89,7 @@ After Iodine has successfully parsed your data file, you will be directed to the
 
 <a class="anchor" id="view-layout-dataTable"></a>
 
-### **Data Table**
+### Data Table
 
 The data table is where your dataset is displayed and works similarly to spreadsheets software such as Excel. You can select cells by clicking on them; select multiple cells by dragging; and select entire column or row by clicking on the column or row headers. Initially, the table will show the first 10 columns and first 50 rows and you can navigate between these rows by scrolling inside the table. 
 
@@ -97,7 +99,7 @@ The second mode is quick inspect. This shows 3 properties of the column that is 
 
 <a class="anchor" id="view-layout-toolbar"></a>
 
-### **Toolbar**
+### Toolbar
 
 The toolbar is where you will perform all cleaning and transformation operations. The toolbar has 3 sections, inspect, view, and operate; you can switch between them by clicking on their tabs. The Inspect section shows you the various properties and statistics of the currently selected column. The View sections lets you set filters to what is shown on the data table, and also search through the dataset. The Operate section lets you perform the various operations. These operations are seperated into cards and they will show according to your current table selection, click the arrow on the right to expand these cards.
 
@@ -107,19 +109,18 @@ The toolbar is where you will perform all cleaning and transformation operations
 
 # Data Cleaning and Transformation
 
-After Iodine has successfully parsed your data file, you will be directed to the **Clean** tab in the main page. The Clean tab allows you to perform various data cleaning and transformation operations that Iodine offers.
+After Tungsten has successfully parsed your data file, you will be directed to the **Transform** tab in the main page. The Transform tab allows you to perform various data cleaning and transformation operations that Tungsten offers.
 
 <div class="tableOfContents">
-    <p><strong>Contents</strong></p>
     <ol>
-        <li>Edit Column
+        <li><a href="#clean-edit-column">Edit Column</a>
             <ol type="a">
-                <li>Date Format String</li>
-                <li>Delete Column and Dealing with Empty Strings</li>
+                <li><a href="#clean-edit-column-date">Date Format String</a></li>
+                <li><a href="#clean-edit-column-delete">Delete Column and Dealing with Empty Strings</a></li>
             </ol>
         </li>
-        <li>Edit Row</li>
-        <li>Edit Cell</li>
+        <li><a href="#clean-edit-cell">Edit Row</a></li>
+        <li><a href="#clean-edit-row">Edit Cell</a></li>
         <li>Column Operations
             <ol type="a">
                 <li>Duplicate Column</li>
@@ -136,18 +137,8 @@ After Iodine has successfully parsed your data file, you will be directed to the
                 <li>Delete Entire Row</li>
             </ol>
         </li>
-        <li>Discretization & Quantiling
-            <ol type="a">
-                <li>Discretization</li>
-                <li>Quantiling</li>
-            </ol>
-        </li>
-        <li>Feature Scaling
-            <ol type="a">
-                <li>Min-Max Scaling</li>
-                <li>Standardization</li>
-            </ol>
-        </li>
+        <li>Discretization & Quantiling</li>
+        <li>Feature Scaling</li>
         <li>Categorical Feature Encoding</li>
         <li>Custom Transformations
             <ol type="a">
@@ -158,6 +149,8 @@ After Iodine has successfully parsed your data file, you will be directed to the
         <li><em>Highway to the Danger Zone</em></li>
     </ol>
 </div>
+
+<a class="anchor" id="clean-edit-column"></a>
 
 ## Edit Column
 
@@ -190,9 +183,11 @@ Which data types you will be allowed to change your column to will depend on the
 
 **N.B.** You will **not** be able to change the type of a column if the column has missing/invalid values. Refer to the *Missing Data* section for ways to deal with missing values.
 
-##### Date format string
+<a class="anchor" id="clean-edit-column-date"></a>
 
-When changing a column to type datetime64, you can specify a format string, this will make sure that Iodine will interpret the date values correctly. Date strings format in Iodine is the same as Python's `strftime`, documented [here](https://docs.python.org/2/library/datetime.html#strftime-and-strptime-behavior). Here are some commonly used directives:
+### Date format string
+
+When changing a column to type datetime64, you can specify a format string, this will make sure that Tungsten will interpret the date values correctly. Date strings format in Tungsten is the same as Python's `strftime`, documented [here](https://docs.python.org/2/library/datetime.html#strftime-and-strptime-behavior). Here are some commonly used directives:
 
 <table>
 <tbody><tr class="headerRow"><td>Directives</td>
@@ -231,29 +226,45 @@ For example, here is 20:18 on July 20th, 1969 in different date-time formats:
 </tbody>
 </table>
 
-##### Delete column and dealing with empty strings
+#### **Quirks**
+
+- Conversion to datetime64 will fail if **any** values in the column cannot be converted to datetime64.
+
+<a class="anchor" id="clean-edit-column-delete"></a>
+
+### Delete column and dealing with empty strings
 
 Other than changing column name and data type, you can also delete the column entirely by clicking *Delete Selected Column*.
 
 For object/str typed columns, you can convert all empty strings to invalid values by clicking *Treat Empty Strings as Invalid Values*, this can be useful when you're trying to impute missing data.
 
+<a class="anchor" id="clean-edit-row"></a>
+
 ## Edit Row
 
 When you select one or more rows, the *Edit Row(s)* card will appear under the View section. In this card, you can delete the rows you have selected by clicking the *Delete Selected Row(s)* button. 
 
+<a class="anchor" id="clean-edit-cell"></a>
+
 ## Edit Cell
 
-When you select a single cell, the *Edit Cell* card will appear under the View section. In this card, you can change the value of the selected cell. Iodine will attempt to convert the entered value back to the data type of the column the cell is in, e.g. 33 to int rather than literal string. However, it may *not* be successful at doing so. In these cases, Iodine will treat the value as a string and convert all values in the column to type Object.
+When you select a single cell, the *Edit Cell* card will appear under the View section. In this card, you can change the value of the selected cell. Tungsten will attempt to convert the entered value back to the data type of the column the cell is in, e.g. 33 to int rather than literal string. However, it may *not* be successful at doing so. In these cases, Tungsten will treat the value as a string and convert all values in the column to type Object.
+
+<a class="anchor" id="clean-column-operations"></a>
 
 ## Column Operations
 
 When you select a single column, the *Column Operations* card will appear under the Operate section.
 
-### **Duplicate Column**
+<a class="anchor" id="clean-column-operations-duplicate"></a>
+
+### Duplicate Column
 
 This option makes a copy of the currently selected column and insert it to the right of the original.
 
-### **Split Column**
+<a class="anchor" id="clean-column-operations-split"></a>
+
+### Split Column
 
 This option splits each value in the selected column using a specified delimiter, put them into multiple columns and inserts them to the right of the original. For example, spliting the following column using the delimiter '/'...
 
@@ -318,7 +329,13 @@ This option splits each value in the selected column using a specified delimiter
 
 The names of the new columns will be in the format: *original-name_(n-1)* where n is the nth column generated.
 
-### **Combine Columns**
+#### **Quirks**
+
+All empty strings in the newly generated columns will be treated as invalid values. However, the original column will be **unaffected**.
+
+<a class="anchor" id="clean-column-operations-combine"></a>
+
+### Combine Columns
 
 This option combines values of multiple columns into a single column using an optional seperator and inserts it in the selected column's position. 
 
@@ -326,7 +343,7 @@ Unlike most other operations, the selection of columns to operate on is **not** 
 
 You can specify a seperator that will be inserted between the values-to-combine; the seperator can be one or more non-whitespace characters. The name for the new column generated **must** be provided, this name must be unique. Click *Combine Columns* after you've finished all configurations.
 
-Iodine will convert all values to strings and combine them by concatenating the values one-by-one, starting from the first column. The resulting column will be of type Object. For example, having selected the columns Year, Month, Day in this order, seperator set as '-', new column name set as 'Date' and having selected the column Year on the data table...
+Tungsten will convert all values to strings and combine them by concatenating the values one-by-one, starting from the first column. The resulting column will be of type Object. For example, having selected the columns Year, Month, Day in this order, seperator set as '-', new column name set as 'Date' and having selected the column Year on the data table...
 
 <table>
 <tbody><tr class="headerRow"><td>Year</td>
@@ -403,7 +420,7 @@ Iodine will convert all values to strings and combine them by concatenating the 
 
 #### **Quirks**
 
-Behind the scenes, Iodine uses the Python `join` function to combine the values. So, for example, combining 6 empty strings using `'%'` as seperator will result in the value `'%%%%%'`. However, Iodine **does** ignore invalid values (NaN/NA) when combining. Because of this, combining...
+Behind the scenes, Tungsten uses the Python `join` function to combine the values. So, for example, combining 6 empty strings using `'%'` as seperator will result in the value `'%%%%%'`. However, Tungsten **does** ignore invalid values (NaN/NA) when combining. Because of this, combining...
 
     (nan), 'abc', (nan), (empty string) 
 
@@ -413,7 +430,7 @@ Behind the scenes, Iodine uses the Python `join` function to combine the values.
 
 When you select a single column, the *Missing Data* card will appear under the Operate section.
 
-### **Impute With Column Average**
+### Impute With Column Average
 
 Depending on the data type of the selected column, you can choose to impute all invalid/missing values in the column with:
 
@@ -421,12 +438,12 @@ Depending on the data type of the selected column, you can choose to impute all 
 - The column median (if the column is of a numerical type)
 - The column mode aka most frequent value (works on all data types)
 
-#### Quirks
+#### **Quirks**
 
 - Imputing with column mean on an int64 typed column will change it to type float64.
-- If the column has more than one mode, Iodine will arbitrarily choose one to use for filling.
+- If the column has more than one mode, Tungsten will arbitrarily choose one to use for filling.
 
-### **Impute With Neighboring Valid Value**
+### Impute With Neighboring Valid Value
 
 This gives you 2 options, *forward fill* and *backward fill*. Their behaviour is illustrated below.
 
@@ -480,22 +497,129 @@ This gives you 2 options, *forward fill* and *backward fill*. Their behaviour is
 
 **N.B.** As illustrated above, when performing forward fill, if the first row of the original column has a missing value, all missing values until the **first** valid value will not be filled. This applies similarly to backward fill if the last row has a missing value.
 
-### **Impute Using Interpolation**
+### Impute Using Interpolation
 
 *To be written...*
 
-### **Impute With Custom Value**
+### Impute With Custom Value
 
-This option fills in missing values with a custom specified value. Iodine will attempt to convert the entered value back to the data type of the column the cell is in, e.g. 33 to int rather than literal string. However, it may *not* be successful at doing so. In these cases, Iodine will treat the value as a string and convert all values in the column to type Object.
+This option fills in missing values with a custom specified value. Tungsten will attempt to convert the entered value back to the data type of the column the cell is in, e.g. 33 to int rather than literal string. However, it may *not* be successful at doing so. In these cases, Tungsten will treat the value as a string and convert all values in the column to type Object.
 
-### **Delete Entire Row**
+### Delete Entire Row
 
 This option deletes (i.e. removes from the table) all rows containing an invalid/missing value in the selected column.
 
 ## Discretization & Quantiling
 
-When you select a single column of a numeric type, the *Discretization & Quantiling* card will appear under the Operate section.
+When you select a single column of a numeric type, the *Discretization & Quantiling* card will appear under the Operate section. This option partitions continuous features to discretized intervals by putting them into bins. Discretization put values into evenly spaced bins **according to the values themselves**. On the other hand, quantiling put values into evenly sized bins **according to the values frequencies**. The following example illustrates the behaviour when a column is discretized and quantiled with 5 bins.
 
-### **Discretization**
+<table>
+<tbody><tr class="headerRow"><td>Original</td>
+<td>Discretized</td>
+<td>Quantiled</td>
+</tr>
+<tr><td>0</td>
+<td>(-0.01, 2]</td>
+<td>[0, 1.8)</td>
+</tr>
+<tr><td>1</td>
+<td>(-0.01, 2]</td>
+<td>[0, 1.8]</td>
+</tr>
+<tr><td>2</td>
+<td>(-0.01, 2]</td>
+<td>(1.8, 4.2]</td>
+</tr>
+<tr><td>3</td>
+<td>(2, 4]</td>
+<td>(1.8, 4.2]</td>
+</tr>
+<tr><td>5</td>
+<td>(4, 6]</td>
+<td>(4.2, 6.4]</td>
+</tr>
+<tr><td>6</td>
+<td>(4, 6]</td>
+<td>(4.2, 6.4]</td>
+</tr>
+<tr><td>7</td>
+<td>(6, 8]</td>
+<td>(6.4, 8.2]</td>
+</tr>
+<tr><td>8</td>
+<td>(6, 8]</td>
+<td>(6.4, 8.2]</td>
+</tr>
+<tr><td>9</td>
+<td>(8, 10]</td>
+<td>(8.2, 10]</td>
+</tr>
+<tr><td>10</td>
+<td>(8, 10]</td>
+<td>(8.2, 10]</td>
+</tr>
+</tbody>
+</table>
 
-This option 
+Instead of having evenly spaced/sized bins, you can set custom intervals and quantiles. Check the *Custom Ranges/Quantiles* option and input a comma-seperated list of ranges/quantiles. The following example shows the behaviour when a column is discretized with the ranges: `-0.01, 2.5, 5, 10`; and quantiled with the qunatiles: `0, 0.25, 0.5, 1`.
+
+<table>
+<tbody><tr class="headerRow"><td>Original</td>
+<td>Discretized</td>
+<td>Quantiled</td>
+</tr>
+<tr><td>0</td>
+<td>(-0.01, 2.5]</td>
+<td>[0, 2.25]</td>
+</tr>
+<tr><td>1</td>
+<td>(-0.01, 2.5]</td>
+<td>[0, 2.25]</td>
+</tr>
+<tr><td>2</td>
+<td>(-0.01, 2.5]</td>
+<td>[0, 2.25]</td>
+</tr>
+<tr><td>3</td>
+<td>(2.5, 5]</td>
+<td>(2.25, 5.5]</td>
+</tr>
+<tr><td>5</td>
+<td>(2.5, 5]</td>
+<td>(2.25, 5.5]</td>
+</tr>
+<tr><td>6</td>
+<td>(5, 10]</td>
+<td>(5.5, 10]</td>
+</tr>
+<tr><td>7</td>
+<td>(5, 10]</td>
+<td>(5.5, 10]</td>
+</tr>
+<tr><td>8</td>
+<td>(5, 10]</td>
+<td>(5.5, 10]</td>
+</tr>
+<tr><td>9</td>
+<td>(5, 10]</td>
+<td>(5.5, 10]</td>
+</tr>
+<tr><td>10</td>
+<td>(5, 10]</td>
+<td>(5.5, 10]</td>
+</tr>
+</tbody>
+</table>
+
+#### **Quirks**
+
+- When setting custom intervals, make sure that the first value is less than the minimum value of the column. Otherwise the minimum value will become blank when being discretized.
+- When a column is discretized/quantiled, the column type will change to Object and the values will act like strings.
+
+## Feature Scaling
+
+When you select a single column of a numeric type, the *Feature Scaling* card will appear under the Operate section.
+
+## Categorical Feature Encoding
+
+When you select a single column of a numeric type, the *Categorical Feature Encoding* card will appear under the Operate section. This option encode categorical features using a one-hot scheme, i.e. converts each record of the column to a combination of a single high (1) bit and zero or more low (0) bits.
