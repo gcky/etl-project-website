@@ -19,7 +19,7 @@ This page is a work-in-progress, some descriptions may be incomplete/inaccurate.
                 <li><a href="#load-upload-commonIssues">Common Issues</a></li>
             </ol>
         </li>
-        <li>Saving/Downloading Data</li>
+        <li><a href="#load-download">Saving/Downloading Data</a></li>
     </ol>
 </div>
 
@@ -55,17 +55,23 @@ In this situation, you can choose to upload your file anyway. However, **do** ex
 
 - Text encoding discrepancies may result in Tungsten not accepting your file. Tungsten works in **UTF-8**, while it will do its best to detect the encoding of your file using the excellent [chardet](https://chardet.github.io/) library and convert it to UTF-8, it doesn't always succeed. In these cases, you will have to convert the file yourself before uploading it again.
 
+<a class="anchor" id="load-download"></a>
+
+## Saving/Downloading Data
+
+After you have finished operating on the data, you can download it back in **CSV** or **JSON** formats. To do this, simply click on the <i class="material-icons md-16">save</i> button on the right of the top bar. You may be able to access a previously uploaded dataset by going to the same URL as the one generated when the data was first uploaded. However, this is **not guaranteed** and it is recommended that you save your dataset as a CSV or JSON file between sessions.
+
 <br>
 <hr>
 <a class="anchor" id="view"></a>
 
 # Data Viewing
 
-After Tungsten has successfully parsed your data file, you will be directed to the **Clean** tab in the main page. The Clean tab consists of two parts, the toolbar on the right and the data table on the left.
+After Tungsten has successfully parsed your data file, you will be directed to the **Transform** tab in the main page. The Transform tab consists of two parts, the toolbar on the right and the data table on the left.
 
 <div class="tableOfContents">
     <ol>
-        <li><a href="#view-layout">Layout</a>
+        <li><a href="#view-layout">Interface</a>
             <ol type="a">
                 <li><a href="#view-layout-dataTable">Data Table</a></li>
                 <li><a href="#view-layout-toolbar">Toolbar</a></li>
@@ -85,7 +91,7 @@ After Tungsten has successfully parsed your data file, you will be directed to t
 
 <a class="anchor" id="view-layout"></a>
 
-## Layout
+## Interface
 
 <a class="anchor" id="view-layout-dataTable"></a>
 
@@ -93,7 +99,9 @@ After Tungsten has successfully parsed your data file, you will be directed to t
 
 The data table is where your dataset is displayed and works similarly to spreadsheets software such as Excel. You can select cells by clicking on them; select multiple cells by dragging; and select entire column or row by clicking on the column or row headers. Initially, the table will show the first 10 columns and first 50 rows and you can navigate between these rows by scrolling inside the table. 
 
-The bar beneath the table (bottom bar) has 2 modes, you can toggle between them by clicking on the blue-grey settings button on the left side of the bar. The first mode, is table navigation. As mentioned, by default, the table will show the first 10 columns and first 50 rows; you can change which columns/rows to show by editing the values in this bar. The table can show a maximum of 20 columns and 500 rows at once.
+<img class="screenshot" src="assets/product/transform.png" width="100%">
+
+The bar beneath the table (bottom bar) has 2 modes, you can toggle between them by clicking on the <i class="material-icons md-16">tune</i> button on the left side of the bar. The first mode, is table navigation. As mentioned, by default, the table will show the first 10 columns and first 50 rows; you can change which columns/rows to show by editing the values in this bar. The table can show a maximum of 20 columns and 500 rows at once.
 
 The second mode is quick inspect. This shows 3 properties of the column that is currently selected, the column data type, the column mode, and the number of missing/invalid values in the column.
 
@@ -101,7 +109,7 @@ The second mode is quick inspect. This shows 3 properties of the column that is 
 
 ### Toolbar
 
-The toolbar is where you will perform all cleaning and transformation operations. The toolbar has 3 sections, inspect, view, and operate; you can switch between them by clicking on their tabs. The Inspect section shows you the various properties and statistics of the currently selected column. The View sections lets you set filters to what is shown on the data table, and also search through the dataset. The Operate section lets you perform the various operations. These operations are seperated into cards and they will show according to your current table selection, click the arrow on the right to expand these cards.
+The toolbar is where you will perform all cleaning and transformation operations. The toolbar has 3 sections, inspect, view, and operate; you can switch between them by clicking on their tabs. The Inspect section shows you the various properties and statistics of the currently selected column. The View sections lets you set filters to what is shown on the data table, and also search through the dataset. The Operate section lets you perform the various operations. These operations are separated into cards and they will show according to your current table selection, click the arrow on the right to expand these cards.
 
 <br>
 <hr>
@@ -119,34 +127,34 @@ After Tungsten has successfully parsed your data file, you will be directed to t
                 <li><a href="#clean-edit-column-delete">Delete Column and Dealing with Empty Strings</a></li>
             </ol>
         </li>
-        <li><a href="#clean-edit-cell">Edit Row</a></li>
-        <li><a href="#clean-edit-row">Edit Cell</a></li>
-        <li>Column Operations
+        <li><a href="#clean-edit-row">Edit Row</a></li>
+        <li><a href="#clean-edit-cell">Edit Cell</a></li>
+        <li><a href="#clean-column-operations">Column Operations</a>
             <ol type="a">
-                <li>Duplicate Column</li>
-                <li>Split Column</li>
-                <li>Combine Columns</li>
+              <li><a href="#clean-column-operations-duplicate">Duplicate Column</a></li>
+              <li><a href="#clean-column-operations-split">Split Column</a></li>
+              <li><a href="#clean-column-operations-combine">Combine Columns</a></li>
             </ol>
         </li>
-        <li>Missing Data
+        <li><a href="#clean-missing-data">Missing Data</a>
             <ol type="a">
-                <li>Impute With Column Average</li>
-                <li>Impute With Neighboring Valid Value</li>
-                <li>Impute Using Interpolation</li>
-                <li>Impute With Custom Value</li>
-                <li>Delete Entire Row</li>
+              <li><a href="#clean-missing-data-average">Impute With Column Average</a></li>
+              <li><a href="#clean-missing-data-neighboring">Impute With Neighboring Valid Value</a></li>
+              <li><a href="#clean-missing-data-interpolation">Impute Using Interpolation</a></li>
+              <li><a href="#clean-missing-data-custom">Impute With Custom Value</a></li>
+              <li><a href="#clean-missing-data-delete">Delete Entire Row</a></li>
             </ol>
         </li>
-        <li>Discretization & Quantiling</li>
-        <li>Feature Scaling</li>
-        <li>Categorical Feature Encoding</li>
-        <li>Custom Transformations
+        <li><a href="#clean-discretization">Discretization & Quantiling</a></li>
+        <li><a href="#clean-feature-scaling">Feature Scaling</a></li>
+        <li><a href="#clean-feature-encoding">Categorical Feature Encoding</a></li>
+        <li><a href="#clean-custom-transformation">Custom Transformations</a>
             <ol type="a">
-                <li>Find & Replace</li>
-                <li>Batch Replacement Queue</li>
+              <li><a href="#clean-custom-transformation-find-replace">Find & Replace</a></li>
+              <li><a href="#clean-custom-transformation-batch">Batch Replacement Queue</a></li>
             </ol>
         </li>
-        <li><em>Highway to the Danger Zone</em></li>
+        <li><a href="#clean-danger-zone"><em>Highway to the Danger Zone</em></a></li>
     </ol>
 </div>
 
@@ -176,7 +184,7 @@ Which data types you will be allowed to change your column to will depend on the
 <td>str, int64</td>
 </tr>
 <tr><td>datetime64</td>
-<td>nil</td>
+<td>str</td>
 </tr>
 </tbody>
 </table>
@@ -266,7 +274,7 @@ This option makes a copy of the currently selected column and insert it to the r
 
 ### Split Column
 
-This option splits each value in the selected column using a specified delimiter, put them into multiple columns and inserts them to the right of the original. For example, spliting the following column using the delimiter '/'...
+This option splits each value in the selected column using a specified delimiter, put them into multiple columns and inserts them to the right of the original. For example, splitting the following column using the delimiter '/'...
 
 <table style="max-width: 200px">
 <tbody><tr class="headerRow"><td>Date</td>
@@ -337,13 +345,13 @@ All empty strings in the newly generated columns will be treated as invalid valu
 
 ### Combine Columns
 
-This option combines values of multiple columns into a single column using an optional seperator and inserts it in the selected column's position. 
+This option combines values of multiple columns into a single column using an optional separator and inserts it in the selected column's position. 
 
 Unlike most other operations, the selection of columns to operate on is **not** done via the data table. To add a column to the list of columns to combine, type the column name into the text field, select the column you want and click *Add*. You **must** have 2 or more columns in order to perform this operation. 
 
-You can specify a seperator that will be inserted between the values-to-combine; the seperator can be one or more non-whitespace characters. The name for the new column generated **must** be provided, this name must be unique. Click *Combine Columns* after you've finished all configurations.
+You can specify a separator that will be inserted between the values-to-combine; the separator can be one or more non-whitespace characters. The name for the new column generated **must** be provided, this name must be unique. Click *Combine Columns* after you've finished all configurations.
 
-Tungsten will convert all values to strings and combine them by concatenating the values one-by-one, starting from the first column. The resulting column will be of type Object. For example, having selected the columns Year, Month, Day in this order, seperator set as '-', new column name set as 'Date' and having selected the column Year on the data table...
+Tungsten will convert all values to strings and combine them by concatenating the values one-by-one, starting from the first column. The resulting column will be of type Object. For example, having selected the columns Year, Month, Day in this order, separator set as '-', new column name set as 'Date' and having selected the column Year on the data table...
 
 <table>
 <tbody><tr class="headerRow"><td>Year</td>
@@ -420,15 +428,19 @@ Tungsten will convert all values to strings and combine them by concatenating th
 
 #### **Quirks**
 
-Behind the scenes, Tungsten uses the Python `join` function to combine the values. So, for example, combining 6 empty strings using `'%'` as seperator will result in the value `'%%%%%'`. However, Tungsten **does** ignore invalid values (NaN/NA) when combining. Because of this, combining...
+Behind the scenes, Tungsten uses the Python `join` function to combine the values. So, for example, combining 6 empty strings using `'%'` as separator will result in the value `'%%%%%'`. However, Tungsten **does** ignore invalid values (NaN/NA) when combining. Because of this, combining...
 
     (nan), 'abc', (nan), (empty string) 
 
 ... with `'%'` will result in the value `'abc%'`. You can convert all empty strings in a column to NaNs by selecting that column, go to *Edit Columns* under View, and click *Treat Empty Strings as Invalid Values*.
 
+<a class="anchor" id="clean-missing-data"></a>
+
 ## Missing Data
 
 When you select a single column, the *Missing Data* card will appear under the Operate section.
+
+<a class="anchor" id="clean-missing-data-average"></a>
 
 ### Impute With Column Average
 
@@ -442,6 +454,8 @@ Depending on the data type of the selected column, you can choose to impute all 
 
 - Imputing with column mean on an int64 typed column will change it to type float64.
 - If the column has more than one mode, Tungsten will arbitrarily choose one to use for filling.
+
+<a class="anchor" id="clean-missing-data-neighboring"></a>
 
 ### Impute With Neighboring Valid Value
 
@@ -482,11 +496,11 @@ This gives you 2 options, *forward fill* and *backward fill*. Their behaviour is
 </tr>
 <tr><td></td>
 <td>Waterloo</td>
-<td>Great Portland Street</td>
+<td>Goodge Street</td>
 </tr>
-<tr><td>Great Portland Street</td>
-<td>Great Portland Street</td>
-<td>Great Portland Street</td>
+<tr><td>Goodge Street</td>
+<td>Goodge Street</td>
+<td>Goodge Street</td>
 </tr>
 <tr><td>...</td>
 <td>...</td>
@@ -497,17 +511,25 @@ This gives you 2 options, *forward fill* and *backward fill*. Their behaviour is
 
 **N.B.** As illustrated above, when performing forward fill, if the first row of the original column has a missing value, all missing values until the **first** valid value will not be filled. This applies similarly to backward fill if the last row has a missing value.
 
+<a class="anchor" id="clean-missing-data-interpolation"></a>
+
 ### Impute Using Interpolation
 
 *To be written...*
+
+<a class="anchor" id="clean-missing-data-custom"></a>
 
 ### Impute With Custom Value
 
 This option fills in missing values with a custom specified value. Tungsten will attempt to convert the entered value back to the data type of the column the cell is in, e.g. 33 to int rather than literal string. However, it may *not* be successful at doing so. In these cases, Tungsten will treat the value as a string and convert all values in the column to type Object.
 
+<a class="anchor" id="clean-missing-data-delete"></a>
+
 ### Delete Entire Row
 
 This option deletes (i.e. removes from the table) all rows containing an invalid/missing value in the selected column.
+
+<a class="anchor" id="clean-discretization"></a>
 
 ## Discretization & Quantiling
 
@@ -616,9 +638,13 @@ Instead of having evenly spaced/sized bins, you can set custom intervals and qua
 - When setting custom intervals, make sure that the first value is less than the minimum value of the column. Otherwise the minimum value will become blank when being discretized.
 - When a column is discretized/quantiled, the column type will change to Object and the values will act like strings.
 
+<a class="anchor" id="clean-feature-scaling"></a>
+
 ## Feature Scaling
 
 When you select a single column of a numeric type, the *Feature Scaling* card will appear under the Operate section.
+
+<a class="anchor" id="clean-feature-encoding"></a>
 
 ## Categorical Feature Encoding
 
