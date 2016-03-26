@@ -345,7 +345,7 @@ iframe.screenshot {
 
 .stepBlock {
   opacity: 0;
-  padding-bottom: 20px;
+  padding: 0 10px 20px 10px;
   animation: fadeIn 0.3s ease-out forwards;
 }
 
@@ -379,4 +379,17 @@ iframe.screenshot {
   width: 100%;
   margin: 59px 0 0 0;
   padding-bottom: 0;
+}
+
+.codeBlockBig {
+  font-family: monospace;
+  text-align: left;
+  font-size: 1.2em;
+  width: 90%;
+  max-width: 650px;
+  border: 1px solid rgba(255,255,255,0.5);
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 5px;
+  margin: 0 auto;
+  padding: 20px 10px;
 }
