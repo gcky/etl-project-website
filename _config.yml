@@ -3,8 +3,8 @@ title: ETL for Data Science
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
   A project of which the objective is to investigate and implement improvements to the data collection, preparation and analysis phase that occurs at the start of most projects related to data science that usually requires a number of manual processes from both the customers and development team.
-baseurl: "/2015/group19" # subpath for ucl
-# baseurl: "/group19" # subpath for github
+# baseurl: "/2015/group19" # subpath for ucl
+baseurl: "" # subpath for github
 url: "http://students.cs.ucl.ac.uk/2015/group19" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  jekyll
