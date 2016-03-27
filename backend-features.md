@@ -9,19 +9,19 @@ title: Back-End Features | ETL for Data Science
 
 This page includes all experiments and prototypes we have done of the various back-end features and details important decisions made while developing these features. Click the buttons below to jump to the corresponding section.
 
-<a class="btn-resp" href="#first-prototypes">1. First Prototypes</a>
-<a class="btn-resp" href="#datasets">X. Datasets Used</a>
+<a class="btn-resp" href="#first-prototypes">1. Prototypes</a>
+<a class="btn-resp" href="#datasets">2. Datasets Used</a>
 
 <a class="anchor" id="first-prototypes"></a>
 
-## First Prototypes
+## Prototypes
 
 Since we established that the system will use [Pandas](http://pandas.pydata.org), an open-source Python data analysis library, to analyse the data, we decided to experiment with Pandas by attempting to implement some data cleaning features. This gave us the chance to familiarise with the various features of Pandas and also get glimpses of the problems and issues we may run into when developing these back-end features. We used [iPython](http://ipython.org) Notebook as the interface for experimenting with Pandas. Below are the prototypes we produced presented as iPython notebooks.
 
 * **Missing Values** - This prototype focuses on dealing with missing values in a dataset and demonstrates Pandas features such as interpolation.<a class="btn btn-short btn-inline" href="{{site.baseurl}}/external/pandas-prototypes/missing-vals.html" target="_blank">View Notebook</a>
 * **Data Normalisation and Standardisation** - This prototype focuses on normalising and standardising data in a dataset.<a class="btn btn-short btn-inline" href="{{site.baseurl}}/external/pandas-prototypes/normalisation.html" target="_blank">View Notebook</a>
 * **Detecting Outliers** - This prototype focuses on detecting potential outliers in a dataset using various metrics for center and dispersion.<a class="btn btn-short btn-inline" href="{{site.baseurl}}/external/pandas-prototypes/outliers.html" target="_blank">View Notebook</a>
-* **Grouping Alternative Representations of the Same Entity** - This prototype focuses on grouping multiple representations of the same entity in a dataset.<a class="btn btn-short btn-inline" href="{{site.baseurl}}/external/pandas-prototypes/grouping.html" target="_blank">View Notebook</a>
+* **Grouping Alternative Representations of the Same Entity** - This prototype focuses on grouping multiple representations of the same entity in a dataset using the method implemented by OpenRefine.<a class="btn btn-short btn-inline" href="{{site.baseurl}}/external/pandas-prototypes/grouping.html" target="_blank">View Notebook</a>
 
 <br><a class="btn-resp" href="#top">^ Back to Top</a>
 

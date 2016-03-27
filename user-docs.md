@@ -7,6 +7,67 @@ title: User Documentation | Tungsten
 This page is a work-in-progress, some descriptions may be incomplete/inaccurate. If you have any queries, please contact the team via our GitHub repo.
 </div>
 
+<a class="anchor" id="install"></a>
+
+# Installing and Running Tungsten
+
+<div class="tableOfContents">
+    <ol>
+        <li><a href="#install-requirements">System Requirements</a></li>
+        <li><a href="#install-tungsten">Installing Tungsten</a></li>
+        <li><a href="#install-run">Running Tungsten</a>
+            <ol type="a">
+                <li><a href="#install-run-start">Start</a></li>
+                <li><a href="#install-run-shut">Shut Down</a></li>
+            </ol>
+        </li>
+    </ol>
+</div>
+
+<a class="anchor" id="install-requirements"></a>
+
+## System Requirements
+
+- Operating System: Mac OS X 10.9+, Windows 8+, Linux
+- Memory: 2GB+
+- Browser: Chrome 45+, Safari 9+, Firefox 42+, Edge 25+, IE 11+ (JavaScript Enabled)
+- VirtualBox and Vagrant installed
+
+<a class="anchor" id="install-tungsten"></a>
+
+## Installing Tungsten
+
+1. Install **VirtualBox** if not installed already.
+  - Go to the [download page](https://www.virtualbox.org/wiki/Downloads).
+  - Follow instructions to install VirtualBox.
+2. Install **Vagrant** if not installed already.
+  - Go to the [download page](https://www.vagrantup.com/downloads.html).
+  - Follow instructions to install Vagrant.
+3. Create a directory for Tungsten and make it the current directory.
+  - `mkdir tungsten`
+  - `cd tungsten`
+4. Download the Tungsten Vagrantfile and put it in the directory.
+5. Start up the vagrant instance of the box.
+  - `vagrant up`
+
+<a class="anchor" id="install-run"></a>
+
+## Running Tungsten
+
+<a class="anchor" id="install-run-start"></a>
+
+### Start
+
+To start Tungsten, open the terminal (Mac) or command prompt (Windows), change the current directory to your Tungsten folder. Enter and execute `vagrant up`. Open the web browser and navigate to `localhost:5000`
+
+<a class="anchor" id="install-run-shut"></a>
+
+### Shut down
+
+To shut down Tungsten, go to the terminal/command prompt, make sure the current directory is your Tungsten folder. Enter and execute `vagrant halt`.
+
+<br>
+<hr>
 <a class="anchor" id="load"></a>
 
 # Data Uploading and Downloading
@@ -101,7 +162,7 @@ The data table is where your dataset is displayed and works similarly to spreads
 
 <img class="screenshot" src="assets/product/transform.png" width="100%">
 
-The bar beneath the table (bottom bar) has 2 modes, you can toggle between them by clicking on the <i class="material-icons md-16">tune</i> button on the left side of the bar. The first mode, is table navigation. As mentioned, by default, the table will show the first 10 columns and first 50 rows; you can change which columns/rows to show by editing the values in this bar. The table can show a maximum of 20 columns and 500 rows at once.
+The bar beneath the table (bottom bar) has 2 modes, you can toggle between them by clicking on the <i class="material-icons md-16">tune</i> button on the left side of the bar. The first and default mode is table navigation. As mentioned, by default, the table will show the first 10 columns and first 50 rows; you can change which columns/rows to show by editing the values in this bar. The table can show a maximum of 20 columns and 500 rows at once.
 
 The second mode is quick inspect. This shows 3 properties of the column that is currently selected, the column data type, the column mode, and the number of missing/invalid values in the column.
 
