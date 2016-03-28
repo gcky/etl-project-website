@@ -2,9 +2,20 @@
 <html>
 
   {% include head.html %}
-    
-    <script>
 
+    <link rel="stylesheet" href="{{ "/css/product-home.css" | prepend: site.baseurl }}">
+
+  <body id="mainBody" onload="loadAnimations()">
+    {% include product-header.html %}
+    <div class="page-content">
+      <div class="wrapper">
+          <div id="normalContent" class="content haltAnimations">
+              {{ content }}
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
     function loadAnimations() {
         var contents = document.getElementById('normalContent');
         var loading1 = document.getElementById('loading1');
@@ -13,25 +24,5 @@
         loading1.style.display = 'none';
         loading2.style.display = 'none';
     }
-    
     </script>
-
-    <link rel="stylesheet" href="{{ "/css/product-home.css" | prepend: site.baseurl }}">
-
-  <body id="mainBody" onload="loadAnimations()">
-
-    {% include product-header.html %}
-
-    <div class="page-content">
-      <div class="wrapper">
-          <div id="normalContent" class="content haltAnimations">
-              {{ content }}
-        </div>
-      </div>
-    </div>
-
-    <!--{% include footer.html %}-->
-
-  </body>
-
 </html>
