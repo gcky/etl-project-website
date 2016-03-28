@@ -164,10 +164,10 @@ a, a:visited, h1, h2, h3, h6 {
     width: 100%;
 }
 
-iframe.screenshot {
+/*iframe.screenshot {
     max-height: none;
     max-width: none;
-}
+}*/
 
 #productLogoWrapper {
     width: 100%;
@@ -181,7 +181,8 @@ iframe.screenshot {
     text-align: center;
     margin: 0 auto;
     flex-grow: 1;
-    min-width: 300px;
+    min-width: 500px;
+    max-width: 800px;
 }
 
 #logoTitle {
@@ -265,7 +266,8 @@ iframe.screenshot {
 
 .productDescriptor {
   flex-grow: 1;
-  min-width: 400px;
+  min-width: 150px;
+  padding-bottom: 20px;
 }
 
 .teamDescriptor {
@@ -310,6 +312,7 @@ iframe.screenshot {
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 0;
+    color: white;
 }
 
 .productText {
@@ -323,7 +326,6 @@ iframe.screenshot {
 	padding-bottom: 0;
     margin: 0;
 	padding-top: 56.25%;
-    width: 100%;
 	height: 0;
 	overflow: hidden;
     box-shadow: 0 0 30px rgba(0,0,0,0.2);
