@@ -1,0 +1,11 @@
+.loading {
+  display: none;
+}
+
+.haltAnimations *:not(.loading) {
+  -webkit-animation: inherit !important;
+  -moz-animation: inherit !important;
+  -ms-animation: inherit !important;
+  -o-animation: inherit !important;
+  animation: inherit !important;
+}
