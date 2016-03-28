@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-  {% include head.html %}
-
-    <link rel="stylesheet" href="{{ "/css/product-home.css" | prepend: site.baseurl }}">
+  {% include head.html override="true" override-src="/css/product-home.css" override-inner="true" override-inner-src="/css/product-header.css" %}
 
   <body id="mainBody" onload="loadAnimations()">
     {% include product-header.html %}

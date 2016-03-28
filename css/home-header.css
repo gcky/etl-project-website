@@ -1,0 +1,15 @@
+#showA:checked ~ label span {
+  color: #37474F !important;
+}
+
+#normalHeadMenu {
+  background-color: rgba(26, 35, 126, 0.9);
+}
+
+#normalHeadMenu .headerContentWrapper #fullWidthBar li a {
+  color: white !important;
+}
+
+#showButtonA label span {
+  color: white !important;
+}
