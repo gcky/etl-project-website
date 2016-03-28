@@ -21,6 +21,7 @@ This page is a work-in-progress, some descriptions may be incomplete/inaccurate.
                 <li><a href="#install-run-shut">Shut Down</a></li>
             </ol>
         </li>
+        <li><a href="#install-uninstall">Uninstall Tungsten</a></li>
     </ol>
 </div>
 
@@ -58,13 +59,19 @@ This page is a work-in-progress, some descriptions may be incomplete/inaccurate.
 
 ### Start
 
-To start Tungsten, open the terminal (Mac) or command prompt (Windows), change the current directory to your Tungsten folder. Enter and execute `vagrant up`. Open the web browser and navigate to `localhost:5000`
+To start Tungsten, open the terminal (Mac) or command prompt (Windows), set the current directory to your Tungsten folder. Enter and execute `vagrant up`. Open the web browser and navigate to `localhost:5000`
 
 <a class="anchor" id="install-run-shut"></a>
 
 ### Shut down
 
 To shut down Tungsten, go to the terminal/command prompt, make sure the current directory is your Tungsten folder. Enter and execute `vagrant halt`.
+
+<a class="anchor" id="install-uninstall"></a>
+
+## Uninstall Tungsten
+
+To uninstall Tungsten, simply delete your Tungsten directory. You will not be able to retrieve any previously uploaded datasets once you delete that directory. Refer to VirtualBox and Vagrant website for their uninstallation instructions.
 
 <br>
 <hr>
@@ -207,7 +214,12 @@ After Tungsten has successfully parsed your data file, you will be directed to t
             </ol>
         </li>
         <li><a href="#clean-discretization">Discretization & Quantiling</a></li>
-        <li><a href="#clean-feature-scaling">Feature Scaling</a></li>
+        <li><a href="#clean-feature-scaling">Feature Scaling</a>
+          <ol type="a">
+              <li><a href="#clean-feature-scaling-minmax">Min-Max Scaling</a></li>
+              <li><a href="#clean-feature-scaling-standardize">Standardization</a></li>
+            </ol>
+        </li>
         <li><a href="#clean-feature-encoding">Categorical Feature Encoding</a></li>
         <li><a href="#clean-custom-transformation">Custom Transformations</a>
             <ol type="a">
@@ -697,7 +709,7 @@ Instead of having evenly spaced/sized bins, you can set custom intervals and qua
 #### **Quirks**
 
 - When setting custom intervals, make sure that the first value is less than the minimum value of the column. Otherwise the minimum value will become blank when being discretized.
-- When a column is discretized/quantiled, the column type will change to Object and the values will act like strings.
+- When a column is discretized/quantiled, the column type will change to Object and the values will act like strings. This means that the column will be sorted alphanumerically when using the sort feature.
 
 <a class="anchor" id="clean-feature-scaling"></a>
 
@@ -705,8 +717,213 @@ Instead of having evenly spaced/sized bins, you can set custom intervals and qua
 
 When you select a single column of a numeric type, the *Feature Scaling* card will appear under the Operate section.
 
+<a class="anchor" id="clean-feature-scaling-minmax"></a>
+
+### Min-Max Scaling
+
+This option scales the values in the column to a specified range (0 - 1 by default). This operation is also known as *normalization*. When applying this option, Tungsten will ignore any invalid values, i.e. invalid values will still be invalid values after the column is scaled. This operation will fail if the column has zero range (minimum value is the same as the maximum value).
+
+<a class="anchor" id="clean-feature-scaling-standardize"></a>
+
+### Standardization
+
+This option scales the values in the column so that the column has zero-mean and unit-variance. When applying this option, Tungsten will ignore any invalid values, i.e. invalid values will still be invalid values after the column is scaled. This operation will fail if the column has zero-variance.
+
 <a class="anchor" id="clean-feature-encoding"></a>
 
 ## Categorical Feature Encoding
 
-When you select a single column of a numeric type, the *Categorical Feature Encoding* card will appear under the Operate section. This option encode categorical features using a one-hot scheme, i.e. converts each record of the column to a combination of a single high (1) bit and zero or more low (0) bits.
+When you select a single column of a numeric or object type, the *Categorical Feature Encoding* card will appear under the Operate section. This option encode categorical features using a one-hot scheme, i.e. converts each record of the column to a combination of a single high (1) bit and zero or more low (0) bits. The following example illustrates this behaviour when the column 'Model' is encoded.
+
+<table>
+<tbody><tr class="headerRow"><td>Model</td>
+<td>Model_A340</td>
+<td>Model_A350</td>
+<td>Model_A380</td>
+<td>Model_B-737</td>
+<td>Model_B-747</td>
+<td>Model_B-787</td>
+</tr>
+<tr><td>B-737</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>A380</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>A340</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>B-787</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>B-747</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr><td>B-787</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>A340</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>B-747</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr><td>A380</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+The names of the newly generated columns follow the format: *original name*_*value*. If the *Replace Original Column* option is checked, the original column will be deleted once the operation is complete.
+
+**N.B.** Invalid/missing value will **not** generate a new column.
+
+<a class="anchor" id="clean-custom-transformation"></a>
+
+## Custom Transformations
+
+When you select a single column of object or date type, the *Custom Transformations* card will appear under the Operate section.
+
+<a class="anchor" id="clean-custom-transformation-find-replace"></a>
+
+### Find & Replace
+
+This feature gives you the flexibility to perform custom text transforms on a column by replacing certain specified values. By default, upon clicking the *Replace* button, Tungsten will look for records that **completely** matches your input in the *String to match* field, and replace them with the input in the *Replacement string* field. If the *Match Regular Expression* option is checked, then Tungsten will replace matched strings inside each record with the replacement string. For example, replacing 'Acton' with 'Harrow' yields the following results.
+
+<table>
+<tbody><tr class="headerRow"><td>Original</td>
+<td>Replaced (Complete)</td>
+<td>Replaced (Regex)</td>
+</tr>
+<tr><td>Acton</td>
+<td>Harrow</td>
+<td>Harrow</td>
+</tr>
+<tr><td>West Acton</td>
+<td>West Acton</td>
+<td>West Harrow</td>
+</tr>
+<tr><td>North Acton</td>
+<td>North Acton</td>
+<td>North Harrow</td>
+</tr>
+<tr><td>South Acton</td>
+<td>South Acton</td>
+<td>South Harrow</td>
+</tr>
+</tbody>
+</table>
+
+**N.B.** Tungsten uses the Python flavoured regex. Read more about it [here](https://docs.python.org/2/library/re.html).
+
+Another example using more advanced regex. 
+
+Replacing
+
+`([0-9]*)/([0-9]*)/([0-9]*)` 
+
+with 
+
+`\3-\1-\2`
+
+yields...
+
+<table>
+<tbody><tr class="headerRow"><td>Original</td>
+<td>Replaced (Regex)</td>
+</tr>
+<tr><td>07/20/1969</td>
+<td>1969-07-20</td>
+</tr>
+<tr><td>07/21/1969</td>
+<td>1969-07-21</td>
+</tr>
+<tr><td>07/22/1969</td>
+<td>1969-07-22</td>
+</tr>
+<tr><td>07/23/1969</td>
+<td>1969-07-23</td>
+</tr>
+<tr><td>07/24/1969</td>
+<td>1969-07-24</td>
+</tr>
+<tr><td>07/25/1969</td>
+<td>1969-07-25</td>
+</tr>
+</tbody>
+</table>
+
+<a class="anchor" id="clean-custom-transformation-batch"></a>
+
+### Batch Replacement Queue
+
+If you wish to do multiple replacements on a column, rather than replacing them one by one, you can push each replacement into a queue and then execute them all at one go. To add a replacement to the queue, click **Add** instead of **Replace** after entering the details. You can add as many replacements as you want to this queue. To remove a replacement, click the <i class="material-icons md-16">close</i> next to the replacement. To reorder the replacements, click *Edit* and move a replacement up/down a spot by clicking the <i class="material-icons md-16">expand_less</i> or <i class="material-icons md-16">expand_more</i> buttons. When you are ready, click *Batch Replace*, this will apply all the replacement in the queue (in the order they're in) to the selected column. To clear the current queue, click *Edit* and *Clear Queue*. 
+
+You can also export a queue for use in a later date or with another dataset. To export a queue, click *Export*, a dialog should pop-up with a JSON string, copy and save the string. To import a queue, simply click *Import* and paste in the JSON string. If the dialogs are not appearing, make sure to disable your browser's dialog blocking functionality.
+
+<a class="anchor" id="clean-danger-zone"></a>
+
+## *Highway to the Danger Zone*
+
+<div class="btn btn-alert">
+<i class="material-icons md-16">error_outline</i> This functionality is meant for developers. Only use it if you know what you're doing as it may result in unintended alterations to your system and lead to the complete loss of your data.
+</div>
+
+This feature allows you to execute Python statements to directly manipulate the dataset. This card appears under the **Operate** tab. To show/hide this card, click the word 'and' in the table navigation bar.
+
+The dataset is represented by the Pandas dataframe object and is referenced by the reference named `df`. To execute statements, input them in the *Commands to execute* field and click *Execute*. Multi-line code is supported.
+
+**N.B.** `df` is a reference to the dataframe object so only in-place operations will work, i.e. operations that manipulates the dataframe itself and not ones that returns a copy of a dataframe. 
