@@ -178,12 +178,21 @@ a, a:visited, h1, h2, h3, h6 {
     margin-bottom: -40px;
 }
 
-.screenshotWrapper {
+.screenshotWrapper, .docsWrapper {
     text-align: center;
     margin: 0 auto;
     flex-grow: 1;
     min-width: 500px;
     max-width: 800px;
+}
+
+.docsGraphicWrapper {
+  min-width: 500px;
+  max-width: 500px;
+}
+
+.docsGraphicWrapper img {
+  width: 100%;
 }
 
 #logoTitle {
@@ -396,7 +405,7 @@ a, a:visited, h1, h2, h3, h6 {
   .stepBlock.right { flex-direction: column }
   .stepBlock.left .productDescriptor { padding-left: 0 }
   .stepBlock.right .productDescriptor { padding-right: 0 }
-  .screenshotWrapper { min-width: 250px }
+  .screenshotWrapper, .docsGraphicWrapper { min-width: 250px }
   .productDescriptor { min-width: 250px }
 }
 
@@ -418,6 +427,14 @@ a, a:visited, h1, h2, h3, h6 {
 
 #try {
   background-color: #263238;
+}
+
+#userManual {
+  background-color: #01579B;
+}
+
+#techDocs {
+  background-color: #333333;
 }
 
 #normalContent {
