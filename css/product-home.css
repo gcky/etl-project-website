@@ -306,7 +306,7 @@ a, a:visited, h1, h2, h3, h6 {
   box-shadow: 0 0 50px rgba(0,0,0,0.3);
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 700px) {
   .teamDescriptor { flex-direction: column }
   .memberDescriptor { 
     width: 100%;
