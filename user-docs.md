@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: User Documentation | Tungsten
+title: User Documentation | Willow
 ---
 
 <div class="btn btn-alert">
@@ -9,19 +9,19 @@ This page is a work-in-progress, some descriptions may be incomplete/inaccurate.
 
 <a class="anchor" id="install"></a>
 
-# Installing and Running Tungsten
+# Installing and Running Willow
 
 <div class="tableOfContents">
     <ol>
         <li><a href="#install-requirements">System Requirements</a></li>
-        <li><a href="#install-tungsten">Installing Tungsten</a></li>
-        <li><a href="#install-run">Running Tungsten</a>
+        <li><a href="#install-tungsten">Installing Willow</a></li>
+        <li><a href="#install-run">Running Willow</a>
             <ol type="a">
                 <li><a href="#install-run-start">Start</a></li>
                 <li><a href="#install-run-shut">Shut Down</a></li>
             </ol>
         </li>
-        <li><a href="#install-uninstall">Uninstall Tungsten</a></li>
+        <li><a href="#install-uninstall">Uninstall Willow</a></li>
     </ol>
 </div>
 
@@ -36,7 +36,7 @@ This page is a work-in-progress, some descriptions may be incomplete/inaccurate.
 
 <a class="anchor" id="install-tungsten"></a>
 
-## Installing Tungsten
+## Installing Willow
 
 1. Install **VirtualBox** if not installed already.
   - Go to the [download page](https://www.virtualbox.org/wiki/Downloads).
@@ -44,34 +44,34 @@ This page is a work-in-progress, some descriptions may be incomplete/inaccurate.
 2. Install **Vagrant** if not installed already.
   - Go to the [download page](https://www.vagrantup.com/downloads.html).
   - Follow instructions to install Vagrant.
-3. Create a directory for Tungsten and make it the current directory.
-  - `mkdir tungsten`
-  - `cd tungsten`
-4. Download the Tungsten Vagrantfile and put it in the directory.
+3. Create a directory for Willow and make it the current directory.
+  - `mkdir willow`
+  - `cd willow`
+4. Download the Willow Vagrantfile and put it in the directory.
 5. Start up the vagrant instance of the box.
   - `vagrant up`
 
 <a class="anchor" id="install-run"></a>
 
-## Running Tungsten
+## Running Willow
 
 <a class="anchor" id="install-run-start"></a>
 
 ### Start
 
-To start Tungsten, open the terminal (Mac) or command prompt (Windows), set the current directory to your Tungsten folder. Enter and execute `vagrant up`. Open the web browser and navigate to `localhost:5000`
+To start Willow, open the terminal (Mac) or command prompt (Windows), set the current directory to your Willow folder. Enter and execute `vagrant up`. Open the web browser and navigate to `localhost:5000`
 
 <a class="anchor" id="install-run-shut"></a>
 
 ### Shut down
 
-To shut down Tungsten, go to the terminal/command prompt, make sure the current directory is your Tungsten folder. Enter and execute `vagrant halt`.
+To shut down Willow, go to the terminal/command prompt, make sure the current directory is your Willow folder. Enter and execute `vagrant halt`.
 
 <a class="anchor" id="install-uninstall"></a>
 
-## Uninstall Tungsten
+## Uninstall Willow
 
-To uninstall Tungsten, simply delete your Tungsten directory. You will not be able to retrieve any previously uploaded datasets once you delete that directory. Refer to VirtualBox and Vagrant website for their uninstallation instructions.
+To uninstall Willow, simply delete your Willow directory. You will not be able to retrieve any previously uploaded datasets once you delete that directory. Refer to VirtualBox and Vagrant website for their uninstallation instructions.
 
 <br>
 <hr>
@@ -95,17 +95,17 @@ To uninstall Tungsten, simply delete your Tungsten directory. You will not be ab
 
 ## Uploading Data
 
-You need to first upload your data into Tungsten in order to perform any operations. Uploading a dataset creates a new Tungsten project. Unlike common web services, *uploading* a file in Tungsten actually stores the project locally on your computer and **not** on the internet. This means that Tungsten works even if you're offline! Tungsten currently supports **CSV**, **JSON**, **XLS**, and **XLSX** formatted data files.
+You need to first upload your data into Willow in order to perform any operations. Uploading a dataset creates a new Willow project. Unlike common web services, *uploading* a file in Willow actually stores the project locally on your computer and **not** on the internet. This means that Willow works even if you're offline! Willow currently supports **CSV**, **JSON**, **XLS**, and **XLSX** formatted data files.
 
-When you access Tungsten using the appropriate address in your web browser, you will be directed to the Upload page. To upload a new file, click the gray box in the middle. This will open a file explorer, simply select the file you want and click *Open*. Alternatively, you can select a file by dragging the file inside the gray box. Click *Upload* to upload the selected file. If the upload is successful, you will be directed to the clean tab in main page.
+When you access Willow using the appropriate address in your web browser, you will be directed to the Upload page. To upload a new file, click the gray box in the middle. This will open a file explorer, simply select the file you want and click *Open*. Alternatively, you can select a file by dragging the file inside the gray box. Click *Upload* to upload the selected file. If the upload is successful, you will be directed to the clean tab in main page.
 
 <a class="anchor" id="load-upload-largeFiles"></a>
 
 ### Large Files
 
-If you select a large file to upload, the advanced options section will expand automatically and warn you about potential performance issues. This is because even with the optimisations we have implemented in Tungsten for dealing with large datasets, its performance will unavoidably degrade as the file size increases.
+If you select a large file to upload, the advanced options section will expand automatically and warn you about potential performance issues. This is because even with the optimisations we have implemented in Willow for dealing with large datasets, its performance will unavoidably degrade as the file size increases.
 
-In this situation, you can choose to upload your file anyway. However, **do** expect degraded performances from Tungsten. Alternatively, if you don't need all of the data in the file, you can select a random sample of your dataset by specifying a percentage (0, 100] under *Advanced Options*. You can also select a seed so you can retrieve the same sample again in the future.
+In this situation, you can choose to upload your file anyway. However, expect slower performances from Willow. Alternatively, if you don't need all of the data in the file, you can select a random sample of your dataset by specifying a percentage (0, 100] under *Advanced Options*. You can also select a seed so you can retrieve the same sample again in the future.
 
 <a class="anchor" id="load-upload-commonIssues"></a>
 
@@ -113,15 +113,15 @@ In this situation, you can choose to upload your file anyway. However, **do** ex
 
 #### Comments at the start of the file
 
-- Some CSV/XLSX files have comments at the start of the file which are not part of the dataset. While Tungsten may accept the file, the resulting data structure will likely not to be correct. Luckily, under *Advanced Options*, you can specify the number of initial lines to ignore when uploading your file. If you do so, Tungsten will skip those lines when parsing your file.
+- Some CSV/XLSX files have comments at the start of the file which are not part of the dataset. While Willow may accept the file, the resulting data structure will likely not to be correct. Luckily, under *Advanced Options*, you can specify the number of initial lines to ignore when uploading your file. If you do so, Willow will skip those lines when parsing your file.
 
 #### Invalid formats
 
-- While Tungsten is a great tool for cleaning datasets, it wasn't built for dealing with invalid data files. However, it will make its best attempt at parsing your file by **removing** invalid records. If Tungsten was not able to parse your file, you will have to fix them before being able to upload them into Tungsten.
+- While Willow is a great tool for cleaning datasets, it wasn't built for dealing with invalid data files. However, it will make its best attempt at parsing your file by **removing** invalid records. If Willow was not able to parse your file, you will have to fix them before being able to upload them into Willow.
 
 #### Text encoding issues
 
-- Text encoding discrepancies may result in Tungsten not accepting your file. Tungsten works in **UTF-8**, while it will do its best to detect the encoding of your file using the excellent [chardet](https://chardet.github.io/) library and convert it to UTF-8, it doesn't always succeed. In these cases, you will have to convert the file yourself before uploading it again.
+- Text encoding discrepancies may result in Willow not accepting your file. Willow works in **UTF-8**, while it will do its best to detect the encoding of your file using the excellent [chardet](https://chardet.github.io/) library and convert it to UTF-8, it doesn't always succeed. In these cases, you will have to convert the file yourself before uploading it again.
 
 <a class="anchor" id="load-download"></a>
 
@@ -135,7 +135,7 @@ After you have finished operating on the data, you can download it back in **CSV
 
 # Data Viewing
 
-After Tungsten has successfully parsed your data file, you will be directed to the **Transform** tab in the main page. The Transform tab consists of two parts, the toolbar on the right and the data table on the left.
+After Willow has successfully parsed your data file, you will be directed to the **Transform** tab in the main page. The Transform tab consists of two parts, the toolbar on the right and the data table on the left.
 
 <div class="tableOfContents">
     <ol>
@@ -185,7 +185,7 @@ The toolbar is where you will perform all cleaning and transformation operations
 
 # Data Cleaning and Transformation
 
-After Tungsten has successfully parsed your data file, you will be directed to the **Transform** tab in the main page. The Transform tab allows you to perform various data cleaning and transformation operations that Tungsten offers.
+After Willow has successfully parsed your data file, you will be directed to the **Transform** tab in the main page. The Transform tab allows you to perform various data cleaning and transformation operations that Willow offers.
 
 <div class="tableOfContents">
     <ol>
@@ -268,7 +268,7 @@ Which data types you will be allowed to change your column to will depend on the
 
 ### Date format string
 
-When changing a column to type datetime64, you can specify a format string, this will make sure that Tungsten will interpret the date values correctly. Date strings format in Tungsten is the same as Python's `strftime`, documented [here](https://docs.python.org/2/library/datetime.html#strftime-and-strptime-behavior). Here are some commonly used directives:
+When changing a column to type datetime64, you can specify a format string, this will make sure that Willow will interpret the date values correctly. Date strings format in Willow is the same as Python's `strftime`, documented [here](https://docs.python.org/2/library/datetime.html#strftime-and-strptime-behavior). Here are some commonly used directives:
 
 <table>
 <tbody><tr class="headerRow"><td>Directives</td>
@@ -329,7 +329,7 @@ When you select one or more rows, the *Edit Row(s)* card will appear under the V
 
 ## Edit Cell
 
-When you select a single cell, the *Edit Cell* card will appear under the View section. In this card, you can change the value of the selected cell. Tungsten will attempt to convert the entered value back to the data type of the column the cell is in, e.g. 33 to int rather than literal string. However, it may *not* be successful at doing so. In these cases, Tungsten will treat the value as a string and convert all values in the column to type Object.
+When you select a single cell, the *Edit Cell* card will appear under the View section. In this card, you can change the value of the selected cell. Willow will attempt to convert the entered value back to the data type of the column the cell is in, e.g. 33 to int rather than literal string. However, it may *not* be successful at doing so. In these cases, Willow will treat the value as a string and convert all values in the column to type Object.
 
 <a class="anchor" id="clean-column-operations"></a>
 
@@ -424,7 +424,7 @@ Unlike most other operations, the selection of columns to operate on is **not** 
 
 You can specify a separator that will be inserted between the values-to-combine; the separator can be one or more non-whitespace characters. The name for the new column generated **must** be provided, this name must be unique. Click *Combine Columns* after you've finished all configurations.
 
-Tungsten will convert all values to strings and combine them by concatenating the values one-by-one, starting from the first column. The resulting column will be of type Object. For example, having selected the columns Year, Month, Day in this order, separator set as '-', new column name set as 'Date' and having selected the column Year on the data table...
+Willow will convert all values to strings and combine them by concatenating the values one-by-one, starting from the first column. The resulting column will be of type Object. For example, having selected the columns Year, Month, Day in this order, separator set as '-', new column name set as 'Date' and having selected the column Year on the data table...
 
 <table>
 <tbody><tr class="headerRow"><td>Year</td>
@@ -501,7 +501,7 @@ Tungsten will convert all values to strings and combine them by concatenating th
 
 #### **Quirks**
 
-Behind the scenes, Tungsten uses the Python `join` function to combine the values. So, for example, combining 6 empty strings using `'%'` as separator will result in the value `'%%%%%'`. However, Tungsten **does** ignore invalid values (NaN/NA) when combining. Because of this, combining...
+Behind the scenes, Willow uses the Python `join` function to combine the values. So, for example, combining 6 empty strings using `'%'` as separator will result in the value `'%%%%%'`. However, Willow **does** ignore invalid values (NaN/NA) when combining. Because of this, combining...
 
     (nan), 'abc', (nan), (empty string) 
 
@@ -526,7 +526,7 @@ Depending on the data type of the selected column, you can choose to impute all 
 #### **Quirks**
 
 - Imputing with column mean on an int64 typed column will change it to type float64.
-- If the column has more than one mode, Tungsten will arbitrarily choose one to use for filling.
+- If the column has more than one mode, Willow will arbitrarily choose one to use for filling.
 
 <a class="anchor" id="clean-missing-data-neighboring"></a>
 
@@ -594,7 +594,7 @@ This gives you 2 options, *forward fill* and *backward fill*. Their behaviour is
 
 ### Impute With Custom Value
 
-This option fills in missing values with a custom specified value. Tungsten will attempt to convert the entered value back to the data type of the column the cell is in, e.g. 33 to int rather than literal string. However, it may *not* be successful at doing so. In these cases, Tungsten will treat the value as a string and convert all values in the column to type Object.
+This option fills in missing values with a custom specified value. Willow will attempt to convert the entered value back to the data type of the column the cell is in, e.g. 33 to int rather than literal string. However, it may *not* be successful at doing so. In these cases, Willow will treat the value as a string and convert all values in the column to type Object.
 
 <a class="anchor" id="clean-missing-data-delete"></a>
 
@@ -721,13 +721,13 @@ When you select a single column of a numeric type, the *Feature Scaling* card wi
 
 ### Min-Max Scaling
 
-This option scales the values in the column to a specified range (0 - 1 by default). This operation is also known as *normalization*. When applying this option, Tungsten will ignore any invalid values, i.e. invalid values will still be invalid values after the column is scaled. This operation will fail if the column has zero range (minimum value is the same as the maximum value).
+This option scales the values in the column to a specified range (0 - 1 by default). This operation is also known as *normalization*. When applying this option, Willow will ignore any invalid values, i.e. invalid values will still be invalid values after the column is scaled. This operation will fail if the column has zero range (minimum value is the same as the maximum value).
 
 <a class="anchor" id="clean-feature-scaling-standardize"></a>
 
 ### Standardization
 
-This option scales the values in the column so that the column has zero-mean and unit-variance. When applying this option, Tungsten will ignore any invalid values, i.e. invalid values will still be invalid values after the column is scaled. This operation will fail if the column has zero-variance.
+This option scales the values in the column so that the column has zero-mean and unit-variance. When applying this option, Willow will ignore any invalid values, i.e. invalid values will still be invalid values after the column is scaled. This operation will fail if the column has zero-variance.
 
 <a class="anchor" id="clean-feature-encoding"></a>
 
@@ -841,7 +841,7 @@ When you select a single column of object or date type, the *Custom Transformati
 
 ### Find & Replace
 
-This feature gives you the flexibility to perform custom text transforms on a column by replacing certain specified values. By default, upon clicking the *Replace* button, Tungsten will look for records that **completely** matches your input in the *String to match* field, and replace them with the input in the *Replacement string* field. If the *Match Regular Expression* option is checked, then Tungsten will replace matched strings inside each record with the replacement string. For example, replacing 'Acton' with 'Harrow' yields the following results.
+This feature gives you the flexibility to perform custom text transforms on a column by replacing certain specified values. By default, upon clicking the *Replace* button, Willow will look for records that **completely** matches your input in the *String to match* field, and replace them with the input in the *Replacement string* field. If the *Match Regular Expression* option is checked, then Willow will replace matched strings inside each record with the replacement string. For example, replacing 'Acton' with 'Harrow' yields the following results.
 
 <table>
 <tbody><tr class="headerRow"><td>Original</td>
@@ -867,7 +867,7 @@ This feature gives you the flexibility to perform custom text transforms on a co
 </tbody>
 </table>
 
-**N.B.** Tungsten uses the Python flavoured regex. Read more about it [here](https://docs.python.org/2/library/re.html).
+**N.B.** Willow uses the Python flavoured regex. Read more about it [here](https://docs.python.org/2/library/re.html).
 
 Another example using more advanced regex. 
 

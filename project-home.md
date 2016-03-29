@@ -7,7 +7,7 @@ layout: home
 </div>-->
 
 <div class="btn">
-Looking for Tungsten? Click <a href="{{site.baseurl}}/">here</a>.
+Looking for Willow? Click <a href="{{site.baseurl}}/">here</a>.
 </div>
 
 # Introduction
