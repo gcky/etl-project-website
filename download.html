@@ -41,7 +41,7 @@ product-name: Willow
     <div class="productDescriptor">
       <h1 class="productTitle">Step 2: Download Willow</h1>
       <p class="productText">Create a directory for Willow, download the Willow Vagrantfile and put it in the directory.</p>
-      <a class="btn download" target="_blank" href="assets/file/Vagrantfile">Download Vagrantfile</a>
+      <a class="btn download" target="_blank" href="{{ site.baseurl }}/assets/file/Vagrantfile" download>Download Vagrantfile</a>
     </div>
   </div>
 
@@ -59,7 +59,13 @@ product-name: Willow
   <div id="finish" class="stepBlock" style="padding-bottom: 20px">
     <div class="productDescriptor">
       <h1 class="productTitle"><strong>You're ready to go!</strong></h1>
-      <p class="productText">Open your browser and go to <code>localhost:5000</code>, upload a dataset and start analysing! <br/> Read the user guide for detailed instructions on how to use Willow.</p>
+      <p class="productText">Open your browser and go to <code>localhost:5000</code>.<br> Watch the guided tour to learn more about using Willow.</p>
+      <div class="videoWrapperOuter">
+        <div class="videoWrapper1">
+          <iframe src="http://www.youtube.com/embed/_IMO_vmfrPw?&rel=0&showinfo=0&modestbranding=1&hd=1&autohide=1" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <p class="productText">Read the user guide for more detailed information on how to use Willow.</p>
       <a class="btn download" href="{{ site.baseurl }}/user-docs.html">Read User Guide</a>
     </div>
   </div>

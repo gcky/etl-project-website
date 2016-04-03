@@ -47,7 +47,7 @@ This page is a work-in-progress, some descriptions may be incomplete/inaccurate.
 3. Create a directory for Willow and make it the current directory.
   - `mkdir willow`
   - `cd willow`
-4. Download the Willow Vagrantfile and put it in the directory.
+4. Download the [Willow Vagrantfile](http://students.cs.ucl.ac.uk/2015/group19/assets/file/Vagrantfile) and put it in the directory.
 5. Start up the vagrant instance of the box.
   - `vagrant up`
 
@@ -106,6 +106,8 @@ When you access Willow using the appropriate address in your web browser, you wi
 If you select a large file to upload, the advanced options section will expand automatically and warn you about potential performance issues. This is because even with the optimisations we have implemented in Willow for dealing with large datasets, its performance will unavoidably degrade as the file size increases.
 
 In this situation, you can choose to upload your file anyway. However, expect slower performances from Willow. Alternatively, if you don't need all of the data in the file, you can select a random sample of your dataset by specifying a percentage (0, 100] under *Advanced Options*. You can also select a seed so you can retrieve the same sample again in the future.
+
+To ensure that you have a good experience with Willow, it is recommended that you only upload files that are less than **100MB**.
 
 <a class="anchor" id="load-upload-commonIssues"></a>
 
@@ -167,7 +169,7 @@ After Willow has successfully parsed your data file, you will be directed to the
 
 The data table is where your dataset is displayed and works similarly to spreadsheets software such as Excel. You can select cells by clicking on them; select multiple cells by dragging; and select entire column or row by clicking on the column or row headers. Initially, the table will show the first 10 columns and first 50 rows and you can navigate between these rows by scrolling inside the table. 
 
-<img class="screenshot" src="assets/product/transform.png" width="100%">
+<img class="screenshot" src="assets/product/transform.jpg" width="100%">
 
 The bar beneath the table (bottom bar) has 2 modes, you can toggle between them by clicking on the <i class="material-icons md-16">tune</i> button on the left side of the bar. The first and default mode is table navigation. As mentioned, by default, the table will show the first 10 columns and first 50 rows; you can change which columns/rows to show by editing the values in this bar. The table can show a maximum of 20 columns and 500 rows at once.
 
@@ -910,7 +912,7 @@ yields...
 
 ### Batch Replacement Queue
 
-If you wish to do multiple replacements on a column, rather than replacing them one by one, you can push each replacement into a queue and then execute them all at one go. To add a replacement to the queue, click **Add** instead of **Replace** after entering the details. You can add as many replacements as you want to this queue. To remove a replacement, click the <i class="material-icons md-16">close</i> next to the replacement. To reorder the replacements, click *Edit* and move a replacement up/down a spot by clicking the <i class="material-icons md-16">expand_less</i> or <i class="material-icons md-16">expand_more</i> buttons. When you are ready, click *Batch Replace*, this will apply all the replacement in the queue (in the order they're in) to the selected column. To clear the current queue, click *Edit* and *Clear Queue*. 
+If you wish to do multiple replacements on a column, rather than performing the operations one by one, you can push each replacement operation into a queue and then execute them all at one go. To add a replacement to the queue, click **Add** instead of **Replace** after entering the details. You can add as many replacements as you want to this queue. To remove a replacement, click the <i class="material-icons md-16">close</i> next to the replacement. To reorder the replacements, click *Edit* and move a replacement up/down a spot by clicking the <i class="material-icons md-16">expand_less</i> or <i class="material-icons md-16">expand_more</i> buttons. When you are ready, click *Batch Replace*, this will apply all the replacement in the queue (in the order they're in) to the selected column. To clear the current queue, click *Edit* and *Clear Queue*. 
 
 You can also export a queue for use in a later date or with another dataset. To export a queue, click *Export*, a dialog should pop-up with a JSON string, copy and save the string. To import a queue, simply click *Import* and paste in the JSON string. If the dialogs are not appearing, make sure to disable your browser's dialog blocking functionality.
 
@@ -919,7 +921,7 @@ You can also export a queue for use in a later date or with another dataset. To 
 ## *Highway to the Danger Zone*
 
 <div class="btn btn-alert">
-<i class="material-icons md-16">error_outline</i> This functionality is meant for developers. Only use it if you know what you're doing as it may result in unintended alterations to your system and lead to the complete loss of your data.
+<i class="material-icons md-16">error_outline</i> This functionality is for developers. Only use it if you know what you're doing as it may result in unintended alterations to your system and lead to the complete loss of your data.
 </div>
 
 This feature allows you to execute Python statements to directly manipulate the dataset. This card appears under the **Operate** tab. To show/hide this card, click the word 'and' in the table navigation bar.
@@ -927,3 +929,22 @@ This feature allows you to execute Python statements to directly manipulate the 
 The dataset is represented by the Pandas dataframe object and is referenced by the reference named `df`. To execute statements, input them in the *Commands to execute* field and click *Execute*. Multi-line code is supported.
 
 **N.B.** `df` is a reference to the dataframe object so only in-place operations will work, i.e. operations that manipulates the dataframe itself and not ones that returns a copy of a dataframe. 
+
+<br>
+<hr>
+<a class="anchor" id="analyze"></a>
+
+# Data Analysis
+
+<div class="tableOfContents">
+    <ol>
+        <li><a href="#analyze-layout">Layout</a></li>
+        <li><a href="#analyze-numeric">Numeric Analysis</a></li>
+        <li><a href="#analyze-text">Text Analysis</a></li>
+    </ol>
+</div>
+
+<a class="anchor" id="analyze-layout"></a>
+
+## Layout
+

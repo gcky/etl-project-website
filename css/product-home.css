@@ -409,16 +409,12 @@ a, a:visited, h1, h2, h3, h6 {
   .productDescriptor { min-width: 250px }
 }
 
-#makeTheMost {
+#makeTheMost, #visualize {
   background-color: #546E7A;
 }
 
 #insights {
   background-color: #455A64;
-}
-
-#visualize {
-  background-color: #546E7A;
 }
 
 #team1, #team2 {
