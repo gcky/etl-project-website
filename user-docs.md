@@ -181,6 +181,11 @@ The second mode is quick inspect. This shows 3 properties of the column that is 
 
 The toolbar is where you will perform all cleaning and transformation operations. The toolbar has 3 sections, inspect, view, and operate; you can switch between them by clicking on their tabs. The Inspect section shows you the various properties and statistics of the currently selected column. The View sections lets you set filters to what is shown on the data table, and also search through the dataset. The Operate section lets you perform the various operations. These operations are separated into cards and they will show according to your current table selection, click the arrow on the right to expand these cards.
 
+### Search
+
+The *Search* card under the *View* tab lets you filter your dataset by only showing rows that matches your search query. Input your query string and select which columns to search in and click *Search*. You can also check the *Search all columns* option to search in all columns. To clear your search, click *Clear*.
+
+
 <br>
 <hr>
 <a class="anchor" id="clean"></a>
@@ -1024,4 +1029,47 @@ The *Visualize* tab consists of the main canvas that displays the graph, and the
 
 ## Charts
 
+Willow supports 5 chart types and each of them have different options, below is a description of the options for each of the chart types.
+
+<a class="anchor" id="visualize-charts-line"></a>
+
 ### Line Chart
+
+<!-- TODO Line Chart Options -->
+
+*To be written...*
+
+<a class="anchor" id="visualize-charts-scatter"></a>
+
+### Scatter Plot
+
+* **X-Axis** - A column to go on the x-axis. Only numerical columns (int, float) are accepted.
+* **Y-Axis** - Columns to be plotted against the x-axis Only numerical columns (int, float) are accepted.
+
+<a class="anchor" id="visualize-charts-time"></a>
+
+### Time Series
+
+* **X-Axis** - A datetime column to be plotted against.
+* **Y-Axis** - Columns to be plotted against the x-axis. Only numerical columns (int, float) are accepted.
+
+<a class="anchor" id="visualize-charts-histogram"></a>
+
+### Histogram
+
+* **X-Axis** - Columns to be plotted. Only numerical columns (int, float) are accepted.
+* **Bin Size** - A number greater than 0 indicating the width of each bin.
+
+<a class="anchor" id="visualize-charts-frequency"></a>
+
+### Frequency
+
+* **X-Axis** - The column to be used for the chart. Only string columns are accepted.
+* **Use Word Frequency** - If checked, the chart will use word frequencies instead of value frequencies.
+* **Number to Show** - Top *n* values/words to show in the chart. Maximum 50.
+
+<a class="anchor" id="visualize-options"></a>
+
+## Advanced Options
+
+You can adjust the range of data to show in your charts by going to the advanced options section of the sidebar. Here you can specify the minimum and maximum value for both the x-axis and the y-axis to be shown on the current chart.
