@@ -29,8 +29,8 @@ This page is a work-in-progress, some descriptions may be incomplete/inaccurate.
 
 ## System Requirements
 
-- Operating System: Mac OS X 10.9+, Windows 8+, Linux
-- Memory: 2GB+
+- Operating System: Mac OS X 10.7+, Windows 7+, Linux
+- Memory: 4GB+
 - Browser: Chrome 45+, Safari 9+, Firefox 42+, Edge 25+, IE 11+ (JavaScript Enabled)
 - VirtualBox and Vagrant installed
 
@@ -167,7 +167,7 @@ After Willow has successfully parsed your data file, you will be directed to the
 
 ### Data Table
 
-The data table is where your dataset is displayed and works similarly to spreadsheets software such as Excel. You can select cells by clicking on them; select multiple cells by dragging; and select entire column or row by clicking on the column or row headers. Initially, the table will show the first 10 columns and first 50 rows and you can navigate between these rows by scrolling inside the table. 
+The data table is where your dataset is displayed and works similarly to spreadsheets software such as Excel. You can select cells by clicking on them; select multiple cells by dragging; and select entire column or row by clicking on the column or row headers. Initially, the table will show the first 10 columns and first 50 rows and you can navigate between these rows by scrolling inside the table.
 
 <img class="screenshot" src="assets/product/transform.jpg" width="100%">
 
@@ -237,7 +237,7 @@ After Willow has successfully parsed your data file, you will be directed to the
 
 ## Edit Column
 
-When you select one whole column, the *Edit Column* card will appear under the View section. In this card, you can change the column name and data type. 
+When you select one whole column, the *Edit Column* card will appear under the View section. In this card, you can change the column name and data type.
 
 <div class="btn btn-alert">
 <i class="material-icons md-16">error_outline</i> It is <strong>not</strong> recommended to have duplicate column names.
@@ -325,7 +325,7 @@ For object/str typed columns, you can convert all empty strings to invalid value
 
 ## Edit Row
 
-When you select one or more rows, the *Edit Row(s)* card will appear under the View section. In this card, you can delete the rows you have selected by clicking the *Delete Selected Row(s)* button. 
+When you select one or more rows, the *Edit Row(s)* card will appear under the View section. In this card, you can delete the rows you have selected by clicking the *Delete Selected Row(s)* button.
 
 <a class="anchor" id="clean-edit-cell"></a>
 
@@ -420,9 +420,9 @@ All empty strings in the newly generated columns will be treated as invalid valu
 
 ### Combine Columns
 
-This option combines values of multiple columns into a single column using an optional separator and inserts it in the selected column's position. 
+This option combines values of multiple columns into a single column using an optional separator and inserts it in the selected column's position.
 
-Unlike most other operations, the selection of columns to operate on is **not** done via the data table. To add a column to the list of columns to combine, type the column name into the text field, select the column you want and click *Add*. You **must** have 2 or more columns in order to perform this operation. 
+Unlike most other operations, the selection of columns to operate on is **not** done via the data table. To add a column to the list of columns to combine, type the column name into the text field, select the column you want and click *Add*. You **must** have 2 or more columns in order to perform this operation.
 
 You can specify a separator that will be inserted between the values-to-combine; the separator can be one or more non-whitespace characters. The name for the new column generated **must** be provided, this name must be unique. Click *Combine Columns* after you've finished all configurations.
 
@@ -505,7 +505,7 @@ Willow will convert all values to strings and combine them by concatenating the 
 
 Behind the scenes, Willow uses the Python `join` function to combine the values. So, for example, combining 6 empty strings using `'%'` as separator will result in the value `'%%%%%'`. However, Willow **does** ignore invalid values (NaN/NA) when combining. Because of this, combining...
 
-    (nan), 'abc', (nan), (empty string) 
+    (nan), 'abc', (nan), (empty string)
 
 ... with `'%'` will result in the value `'abc%'`. You can convert all empty strings in a column to NaNs by selecting that column, go to *Edit Columns* under View, and click *Treat Empty Strings as Invalid Values*.
 
@@ -871,13 +871,13 @@ This feature gives you the flexibility to perform custom text transforms on a co
 
 **N.B.** Willow uses the Python flavoured regex. Read more about it [here](https://docs.python.org/2/library/re.html).
 
-Another example using more advanced regex. 
+Another example using more advanced regex.
 
 Replacing
 
-`([0-9]*)/([0-9]*)/([0-9]*)` 
+`([0-9]*)/([0-9]*)/([0-9]*)`
 
-with 
+with
 
 `\3-\1-\2`
 
@@ -912,7 +912,7 @@ yields...
 
 ### Batch Replacement Queue
 
-If you wish to do multiple replacements on a column, rather than performing the operations one by one, you can push each replacement operation into a queue and then execute them all at one go. To add a replacement to the queue, click **Add** instead of **Replace** after entering the details. You can add as many replacements as you want to this queue. To remove a replacement, click the <i class="material-icons md-16">close</i> next to the replacement. To reorder the replacements, click *Edit* and move a replacement up/down a spot by clicking the <i class="material-icons md-16">expand_less</i> or <i class="material-icons md-16">expand_more</i> buttons. When you are ready, click *Batch Replace*, this will apply all the replacement in the queue (in the order they're in) to the selected column. To clear the current queue, click *Edit* and *Clear Queue*. 
+If you wish to do multiple replacements on a column, rather than performing the operations one by one, you can push each replacement operation into a queue and then execute them all at one go. To add a replacement to the queue, click **Add** instead of **Replace** after entering the details. You can add as many replacements as you want to this queue. To remove a replacement, click the <i class="material-icons md-16">close</i> next to the replacement. To reorder the replacements, click *Edit* and move a replacement up/down a spot by clicking the <i class="material-icons md-16">expand_less</i> or <i class="material-icons md-16">expand_more</i> buttons. When you are ready, click *Batch Replace*, this will apply all the replacement in the queue (in the order they're in) to the selected column. To clear the current queue, click *Edit* and *Clear Queue*.
 
 You can also export a queue for use in a later date or with another dataset. To export a queue, click *Export*, a dialog should pop-up with a JSON string, copy and save the string. To import a queue, simply click *Import* and paste in the JSON string. If the dialogs are not appearing, make sure to disable your browser's dialog blocking functionality.
 
@@ -928,7 +928,7 @@ This feature allows you to execute Python statements to directly manipulate the 
 
 The dataset is represented by the Pandas dataframe object and is referenced by the reference named `df`. To execute statements, input them in the *Commands to execute* field and click *Execute*. Multi-line code is supported.
 
-**N.B.** `df` is a reference to the dataframe object so only in-place operations will work, i.e. operations that manipulates the dataframe itself and not ones that returns a copy of a dataframe. 
+**N.B.** `df` is a reference to the dataframe object so only in-place operations will work, i.e. operations that manipulates the dataframe itself and not ones that returns a copy of a dataframe.
 
 <br>
 <hr>
@@ -939,7 +939,7 @@ The dataset is represented by the Pandas dataframe object and is referenced by t
 <div class="tableOfContents">
     <ol>
         <li><a href="#analyze-layout">Layout</a></li>
-        <li><a href="#analyze-numeric">Numeric Analysis</a></li>
+        <li><a href="#analyze-numeric">Numerical Analysis</a></li>
         <li><a href="#analyze-text">Text Analysis</a></li>
     </ol>
 </div>
@@ -948,3 +948,56 @@ The dataset is represented by the Pandas dataframe object and is referenced by t
 
 ## Layout
 
+The Analyze tab consists of two parts - the sidebar and the panels. The sidebar is where you can control which column analyses to show in the panels on the right. Simply start typing the name of the column you wish to analyze, and select the column. It's analysis should show in one of the panels. You can show at most 4 column analyses at once, change the panel grid size by selecting an option in the grid size selector.
+
+<a class="anchor" id="analyze-numeric"></a>
+
+## Numerical Analysis
+
+For columns of a numerical type (int, float), the following statistical attributes will be displayed:
+
+* **Unique values** - total number of unique values in the column
+* **Missing/Invalid values** - total number of missing values in the column
+* **Mode** - most frequent value(s)
+* **Mean**
+* **Standard deviation**
+* **Minimum**
+* **Lower quartile**
+* **Median**
+* **Upper quartile**
+* **Maximum**
+
+A frequency table is also available which shows the 50 most frequent values in the column and their frequencies.
+
+<a class="anchor" id="analyze-text"></a>
+
+## Text Analysis
+
+For columns of type string, the following statistical attributes will be displayed:
+
+* **Unique values** - total number of unique values in the column
+* **Missing/Invalid values** - total number of missing values in the column
+* **Mode** - most frequent value(s)
+* **Total words** - total number of words (*not* values) in the column
+* **Unique words** - total number of unique words in the column
+* **Most prominent word** - most frequent word(s)
+* **Word lengths** - minimum and maximum word lengths
+* **Average word length** - mean of word length
+* **Words per row** - minimum and maximum of words in values
+* **Average words per row** - mean of words per row
+
+A frequency table is available which shows the 50 most frequent values in the column and their frequencies. A word frequency table is also available which shows the 50 most frequent values in the column and their frequencies.
+
+<br>
+<hr>
+<a class="anchor" id="visualize"></a>
+
+# Data Visualization
+
+<div class="tableOfContents">
+    <ol>
+        <li><a href="#visualize-layout">Layout</a></li>
+        <li><a href="#visualize-numeric">Numerical Analysis</a></li>
+        <li><a href="#visualize-text">Text Analysis</a></li>
+    </ol>
+</div>

@@ -31,7 +31,7 @@ body {
     }
     to {
         -ms-transform: translateY(0); /* IE 9 */
-        -webkit-transform: translateY(0x);
+        -webkit-transform: translateY(0);
         transform: translateY(0);
         opacity: 1;
     }
@@ -81,7 +81,7 @@ body {
 }
 
 @keyframes wiggle {
-    0% { 
+    0% {
         -ms-transform: translate(0);
         -webkit-transform: translate(0);
         transform: translate(0);
@@ -91,7 +91,7 @@ body {
         -webkit-transform: translate(-5px);
         transform: translate(-5px);
     }
-    50% { 
+    50% {
         -ms-transform: translate(0);
         -webkit-transform: translate(0);
         transform: translate(0);
@@ -308,7 +308,7 @@ a, a:visited, h1, h2, h3, h6 {
 
 @media screen and (max-width: 700px) {
   .teamDescriptor { flex-direction: column }
-  .memberDescriptor { 
+  .memberDescriptor {
     width: 100%;
     margin-top: 30px;
   }
