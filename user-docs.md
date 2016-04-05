@@ -938,15 +938,17 @@ The dataset is represented by the Pandas dataframe object and is referenced by t
 
 <div class="tableOfContents">
     <ol>
-        <li><a href="#analyze-layout">Layout</a></li>
+        <li><a href="#analyze-interface">Interface</a></li>
         <li><a href="#analyze-numeric">Numerical Analysis</a></li>
         <li><a href="#analyze-text">Text Analysis</a></li>
     </ol>
 </div>
 
-<a class="anchor" id="analyze-layout"></a>
+<a class="anchor" id="analyze-interface"></a>
 
-## Layout
+## Interface
+
+<img class="screenshot" src="assets/product/analyze.jpg" width="100%">
 
 The Analyze tab consists of two parts - the sidebar and the panels. The sidebar is where you can control which column analyses to show in the panels on the right. Simply start typing the name of the column you wish to analyze, and select the column. It's analysis should show in one of the panels. You can show at most 4 column analyses at once, change the panel grid size by selecting an option in the grid size selector.
 
@@ -996,8 +998,30 @@ A frequency table is available which shows the 50 most frequent values in the co
 
 <div class="tableOfContents">
     <ol>
-        <li><a href="#visualize-layout">Layout</a></li>
-        <li><a href="#visualize-numeric">Numerical Analysis</a></li>
-        <li><a href="#visualize-text">Text Analysis</a></li>
+        <li><a href="#visualize-interface">Interface</a></li>
+        <li><a href="#visualize-charts">Charts</a>
+          <ol>
+            <li><a href="#visualize-charts-line">Line Chart</a></li>
+            <li><a href="#visualize-charts-scatter">Scatter Plot</a></li>
+            <li><a href="#visualize-charts-time">Time Series</a></li>
+            <li><a href="#visualize-charts-histogram">Histogram</a></li>
+            <li><a href="#visualize-charts-frequency">Frequency</a></li>
+          </ol>
+        </li>
+        <li><a href="#visualize-options">Advanced Options</a></li>
     </ol>
 </div>
+
+<a class="anchor" id="visualize-interface"></a>
+
+## Interface
+
+<img class="screenshot" src="assets/product/visualize.jpg" width="100%">
+
+The *Visualize* tab consists of the main canvas that displays the graph, and the sidebar that goes on top of the canvas. Click <i class="material-icons md-16">exit_to_app</i> to show/hide the sidebar. To start generating a chart, first select the chart type and follow instructions in the next section. When a chart has been generated, there will be several controls on the bottom right hand side of the canvas. The white buttons are zooming controls. Click <i class="material-icons md-16">add</i> to zoom in, <i class="material-icons md-16">remove</i> to zoom out, and <i class="material-icons md-16">undo</i> to reset to the default zoom level. Click the orange <i class="material-icons md-16">file_download</i> button to download the current chart as an image.
+
+<a class="anchor" id="visualize-charts"></a>
+
+## Charts
+
+### Line Chart
