@@ -181,10 +181,13 @@ The second mode is quick inspect. This shows 3 properties of the column that is 
 
 The toolbar is where you will perform all cleaning and transformation operations. The toolbar has 3 sections, inspect, view, and operate; you can switch between them by clicking on their tabs. The Inspect section shows you the various properties and statistics of the currently selected column. The View sections lets you set filters to what is shown on the data table, and also search through the dataset. The Operate section lets you perform the various operations. These operations are separated into cards and they will show according to your current table selection, click the arrow on the right to expand these cards.
 
+### Sort
+
+The *Sort* card under the *View* tab lets you sort your dataset according to specific columns. 
+
 ### Search
 
 The *Search* card under the *View* tab lets you filter your dataset by only showing rows that matches your search query. Input your query string and select which columns to search in and click *Search*. You can also check the *Search all columns* option to search in all columns. To clear your search, click *Clear*.
-
 
 <br>
 <hr>
