@@ -1,10 +1,10 @@
 ---
 layout: docs
-title: User Documentation | Willow
+title: User Guide | Willow
 ---
 
 <div class="btn btn-alert">
-This page is a work-in-progress, some descriptions may be incomplete/inaccurate. If you have any queries, please contact the team via our GitHub repo.
+This page is a work-in-progress, descriptions may be incomplete/inaccurate. If you have any queries, please contact the team via our GitHub repo.
 </div>
 
 <a class="anchor" id="install"></a>
@@ -147,15 +147,9 @@ After Willow has successfully parsed your data file, you will be directed to the
                 <li><a href="#view-layout-toolbar">Toolbar</a></li>
             </ol>
         </li>
-        <li>Filter
-            <ol type="a">
-                <li>Duplicates</li>
-                <li>Missing/Invalid Values</li>
-                <li>Outliers</li>
-            </ol>
-        </li>
-        <li>Sort</li>
-        <li>Search</li>
+        <li><a href="#view-layout-filter">Filter</a></li>
+        <li><a href="#view-layout-sort">Sort</a></li>
+        <li><a href="#view-layout-search">Search</a></li>
     </ol>
 </div>
 
@@ -181,11 +175,35 @@ The second mode is quick inspect. This shows 3 properties of the column that is 
 
 The toolbar is where you will perform all cleaning and transformation operations. The toolbar has 3 sections, inspect, view, and operate; you can switch between them by clicking on their tabs. The Inspect section shows you the various properties and statistics of the currently selected column. The View sections lets you set filters to what is shown on the data table, and also search through the dataset. The Operate section lets you perform the various operations. These operations are separated into cards and they will show according to your current table selection, click the arrow on the right to expand these cards.
 
-### Sort
+<a class="anchor" id="view-layout-filter"></a>
 
-The *Sort* card under the *View* tab lets you sort your dataset according to specific columns. 
+## Filter
 
-### Search
+The *Filter* card under the *View* tab lets you show specific rows of the dataset according to some criteria. Start by selecting one of the criteria, then select the columns to check against the criteria. You can also select a column for the records to be grouped by in the *Group by* field.
+
+### Duplicates
+
+This option only shows rows that has a **non-unique** value in the selected columns.
+
+### Invalid Values
+
+This option only shows rows that has a missing/invalid value in the selected columns. If *Check All Columns* is checked, then only rows that have missing/invalid value in all columns in the dataset will be shown.
+
+### Outliers
+
+This option only shows rows that is a outlier in the selected columns and only works on numerical columns. By default, a value is considered an outlier if it lies beyond 2 standard deviation from the mean. You can alter this by changing the number of standard deviations to be used for the accepted range. You can also select a trimmed percentage which is defaulted to 0%.
+
+<a class="anchor" id="view-layout-sort"></a>
+
+## Sort
+
+The *Sort* card under the *View* tab lets you sort your dataset according to a specific column. Start by typing in a column for the dataset to be sorted by. After a column has been chosen, you can choose to sort the dataset in ascending or descending order.
+
+**N.B.** This feature only changes the way the dataset is displayed and has **no effect** on the dataset itself.
+
+<a class="anchor" id="view-layout-search"></a>
+
+## Search
 
 The *Search* card under the *View* tab lets you filter your dataset by only showing rows that matches your search query. Input your query string and select which columns to search in and click *Search*. You can also check the *Search all columns* option to search in all columns. To clear your search, click *Clear*.
 
@@ -257,17 +275,17 @@ Which data types you will be allowed to change your column to will depend on the
 <tbody><tr class="headerRow"><td>Current Type</td>
 <td width="60%">Possible Options</td>
 </tr>
-<tr><td>object/str</td>
+<tr><td>string</td>
 <td>datetime64, float64, int64</td>
 </tr>
 <tr><td>int64</td>
-<td>str, float64</td>
+<td>string, float64</td>
 </tr>
 <tr><td>float64</td>
-<td>str, int64</td>
+<td>string, int64</td>
 </tr>
 <tr><td>datetime64</td>
-<td>str</td>
+<td>string</td>
 </tr>
 </tbody>
 </table>
@@ -327,7 +345,7 @@ For example, here is 20:18 on July 20th, 1969 in different date-time formats:
 
 Other than changing column name and data type, you can also delete the column entirely by clicking *Delete Selected Column*.
 
-For object/str typed columns, you can convert all empty strings to invalid values by clicking *Treat Empty Strings as Invalid Values*, this can be useful when you're trying to impute missing data.
+For string typed columns, you can convert all empty strings to invalid values by clicking *Treat Empty Strings as Invalid Values*, this can be useful when you're trying to impute missing data.
 
 <a class="anchor" id="clean-edit-row"></a>
 
@@ -339,7 +357,7 @@ When you select one or more rows, the *Edit Row(s)* card will appear under the V
 
 ## Edit Cell
 
-When you select a single cell, the *Edit Cell* card will appear under the View section. In this card, you can change the value of the selected cell. Willow will attempt to convert the entered value back to the data type of the column the cell is in, e.g. 33 to int rather than literal string. However, it may *not* be successful at doing so. In these cases, Willow will treat the value as a string and convert all values in the column to type Object.
+When you select a single cell, the *Edit Cell* card will appear under the View section. In this card, you can change the value of the selected cell. Willow will attempt to convert the entered value back to the data type of the column the cell is in, e.g. 33 to int rather than literal string. However, it may *not* be successful at doing so. In these cases, Willow will treat the value as a string and convert all values in the column to type string.
 
 <a class="anchor" id="clean-column-operations"></a>
 
@@ -434,7 +452,7 @@ Unlike most other operations, the selection of columns to operate on is **not** 
 
 You can specify a separator that will be inserted between the values-to-combine; the separator can be one or more non-whitespace characters. The name for the new column generated **must** be provided, this name must be unique. Click *Combine Columns* after you've finished all configurations.
 
-Willow will convert all values to strings and combine them by concatenating the values one-by-one, starting from the first column. The resulting column will be of type Object. For example, having selected the columns Year, Month, Day in this order, separator set as '-', new column name set as 'Date' and having selected the column Year on the data table...
+Willow will convert all values to strings and combine them by concatenating the values one-by-one, starting from the first column. The resulting column will be of type string. For example, having selected the columns Year, Month, Day in this order, separator set as '-', new column name set as 'Date' and having selected the column Year on the data table...
 
 <table>
 <tbody><tr class="headerRow"><td>Year</td>
@@ -604,7 +622,7 @@ This gives you 2 options, *forward fill* and *backward fill*. Their behaviour is
 
 ### Impute With Custom Value
 
-This option fills in missing values with a custom specified value. Willow will attempt to convert the entered value back to the data type of the column the cell is in, e.g. 33 to int rather than literal string. However, it may *not* be successful at doing so. In these cases, Willow will treat the value as a string and convert all values in the column to type Object.
+This option fills in missing values with a custom specified value. Willow will attempt to convert the entered value back to the data type of the column the cell is in, e.g. 33 to int rather than literal string. However, it may *not* be successful at doing so. In these cases, Willow will treat the value as a string and convert all values in the column to type string.
 
 <a class="anchor" id="clean-missing-data-delete"></a>
 
@@ -719,7 +737,7 @@ Instead of having evenly spaced/sized bins, you can set custom intervals and qua
 #### **Quirks**
 
 - When setting custom intervals, make sure that the first value is less than the minimum value of the column. Otherwise the minimum value will become blank when being discretized.
-- When a column is discretized/quantiled, the column type will change to Object and the values will act like strings. This means that the column will be sorted alphanumerically when using the sort feature.
+- When a column is discretized/quantiled, the column type will change to string and the values will act like strings. This means that the column will be sorted alphanumerically when using the sort feature.
 
 <a class="anchor" id="clean-feature-scaling"></a>
 
@@ -743,7 +761,7 @@ This option scales the values in the column so that the column has zero-mean and
 
 ## Categorical Feature Encoding
 
-When you select a single column of a numeric or object type, the *Categorical Feature Encoding* card will appear under the Operate section. This option encode categorical features using a one-hot scheme, i.e. converts each record of the column to a combination of a single high (1) bit and zero or more low (0) bits. The following example illustrates this behaviour when the column 'Model' is encoded.
+When you select a single column of a numeric or string type, the *Categorical Feature Encoding* card will appear under the Operate section. This option encode categorical features using a one-hot scheme, i.e. converts each record of the column to a combination of a single high (1) bit and zero or more low (0) bits. The following example illustrates this behaviour when the column 'Model' is encoded.
 
 <table>
 <tbody><tr class="headerRow"><td>Model</td>
@@ -845,7 +863,7 @@ The names of the newly generated columns follow the format: *original name*_*val
 
 ## Custom Transformations
 
-When you select a single column of object or date type, the *Custom Transformations* card will appear under the Operate section.
+When you select a single column of string or date type, the *Custom Transformations* card will appear under the Operate section.
 
 <a class="anchor" id="clean-custom-transformation-find-replace"></a>
 
@@ -1038,9 +1056,8 @@ Willow supports 5 chart types and each of them have different options, below is 
 
 ### Line Chart
 
-<!-- TODO Line Chart Options -->
-
-*To be written...*
+* **X-Axis** - A column to go on the x-axis. Only numerical columns (int, float) are accepted.
+* **Y-Axis** - Columns to be plotted against the x-axis Only numerical columns (int, float) are accepted.
 
 <a class="anchor" id="visualize-charts-scatter"></a>
 
@@ -1048,6 +1065,8 @@ Willow supports 5 chart types and each of them have different options, below is 
 
 * **X-Axis** - A column to go on the x-axis. Only numerical columns (int, float) are accepted.
 * **Y-Axis** - Columns to be plotted against the x-axis Only numerical columns (int, float) are accepted.
+
+A regression line will also be plotted with each variable in the x-axis along with its coefficient of determination (*R<sup>2</sup>*) and Pearson product-moment correlation coefficient (*p*).
 
 <a class="anchor" id="visualize-charts-time"></a>
 
@@ -1069,7 +1088,7 @@ Willow supports 5 chart types and each of them have different options, below is 
 
 * **X-Axis** - The column to be used for the chart. Only string columns are accepted.
 * **Use Word Frequency** - If checked, the chart will use word frequencies instead of value frequencies.
-* **Number to Show** - Top *n* values/words to show in the chart. Maximum 50.
+* **Top n Occurrences** - Top *n* values/words to show in the chart. Maximum 50.
 
 <a class="anchor" id="visualize-options"></a>
 

@@ -31,16 +31,29 @@ To enable the team to communicate with the client effectively, we used Slack as 
 
 <hr>
 
+<a class="anchor" id="work-packages"></a>
+
+## Work Packages Completed By Team Members
+
+<hr>
+
 <a class="anchor" id="flow-diagram"></a>
 
 ## Cumulative Flow Diagram
 
-<a class="btn btn-alert" href="#">**Last Updated:** 3/12/2015</a>
+<a class="btn btn-alert" href="#">**Last Updated:** 9/4/2016</a>
 
-This diagram shows the statuses of issues over time.
+This diagram shows the statuses of issues over the first term.
 
 <div class="imgCapContainer">
     <img src="{{site.baseurl}}/assets/pm/flow-3-12-15.png" alt="Flow"
+     class="fullWidthImage titleImage">
+</div>
+
+This diagram shows the statuses of issues over the first and second term.
+
+<div class="imgCapContainer">
+    <img src="{{site.baseurl}}/assets/pm/flow-9-4-16.png" alt="Flow"
      class="fullWidthImage titleImage">
 </div>
 
@@ -52,7 +65,705 @@ This diagram shows the statuses of issues over time.
 
 ## Issues Archive
 
-<a class="btn btn-alert" href="#">**Last Updated:** 3/12/2015</a>
+<a class="btn btn-alert" href="#">**Last Updated:** 9/4/2016</a>
+
+<table class="table table-bordered table-hover table-condensed tasks">
+   <tr class="headerRow">
+      <td>Issue Type</td>
+      <td>Key</td>
+      <td>Summary</td>
+      <td>Status</td>
+      <td>Resolution</td>
+      <td>Created</td>
+      <td>Updated</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-80</td>
+      <td>Test all features, uncover & fix bugs</td>
+      <td>In Progress</td>
+      <td>Unresolved</td>
+      <td>20/3/2016 12:49</td>
+      <td>20/3/2016 12:50</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-79</td>
+      <td>Fix missing analysis bug (zero valid values)</td>
+      <td>To Do</td>
+      <td>Unresolved</td>
+      <td>4/3/2016 15:23</td>
+      <td>20/3/2016 12:49</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-78</td>
+      <td>Fix rename & change data type of column bug (name becomes blank)</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>4/3/2016 15:23</td>
+      <td>20/3/2016 12:50</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-77</td>
+      <td>Undo</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>3/3/2016 17:06</td>
+      <td>20/3/2016 12:48</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-76</td>
+      <td>Improve delete rows</td>
+      <td>In Progress</td>
+      <td>Unresolved</td>
+      <td>3/3/2016 17:03</td>
+      <td>20/3/2016 12:49</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-75</td>
+      <td>Duplicate column</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>3/3/2016 17:01</td>
+      <td>7/3/2016 12:10</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-74</td>
+      <td>Import JSON</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>3/3/2016 17:01</td>
+      <td>8/3/2016 10:00</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-73</td>
+      <td>Fix deployment issues with Windows</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>1/3/2016 12:09</td>
+      <td>8/3/2016 13:34</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-72</td>
+      <td>Save generated charts as image</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>1/3/2016 12:08</td>
+      <td>8/3/2016 10:00</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-71</td>
+      <td>Search (+ with regex)</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>1/3/2016 12:07</td>
+      <td>20/3/2016 12:48</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-70</td>
+      <td>Edit individual cells</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>1/3/2016 12:06</td>
+      <td>12/3/2016 12:36</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-69</td>
+      <td>Export dataframe as JSON, CSV</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>1/3/2016 12:04</td>
+      <td>1/3/2016 15:09</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-68</td>
+      <td>Find & show outliers for numeric columns</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>2/2/2016 16:45</td>
+      <td>6/3/2016 18:22</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-67</td>
+      <td>Find & view duplicated rows</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>2/2/2016 16:43</td>
+      <td>6/3/2016 18:22</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-66</td>
+      <td>Find & replace feature with regular expressions</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>28/1/2016 20:41</td>
+      <td>6/2/2016 22:04</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-65</td>
+      <td>sorting of rows by column</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>28/1/2016 20:41</td>
+      <td>20/3/2016 12:48</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-64</td>
+      <td>Date variable type: implement conversion to/fro & integration with existing clean, visualize and analyze features</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>28/1/2016 20:40</td>
+      <td>5/2/2016 23:58</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-63</td>
+      <td>refactor CleanController: move cards in toolbar to individual Angular directives, use pubsub to communicate changes in state</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>22/1/2016 23:32</td>
+      <td>28/1/2016 20:42</td>
+   </tr>
+   <tr>
+      <td>Epic</td>
+      <td>UCL-61</td>
+      <td>Data Analysis</td>
+      <td>To Do</td>
+      <td>Unresolved</td>
+      <td>8/12/2015 14:49</td>
+      <td>8/12/2015 14:49</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-60</td>
+      <td>show text analysis such as most frequent word for string type data</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>8/12/2015 14:47</td>
+      <td>30/1/2016 22:49</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-59</td>
+      <td>data analysis must haves (mean, median, range, stddev etc)</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>8/12/2015 14:45</td>
+      <td>30/1/2016 21:28</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-58</td>
+      <td>show the unique values and their count of every column of the dataset</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>8/12/2015 14:44</td>
+      <td>27/2/2016 18:20</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-57</td>
+      <td>UI for graph screen</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>8/12/2015 14:39</td>
+      <td>20/1/2016 14:09</td>
+   </tr>
+   <tr>
+      <td>Epic</td>
+      <td>UCL-56</td>
+      <td>Data Vlsualisation - Must</td>
+      <td>To Do</td>
+      <td>Unresolved</td>
+      <td>8/12/2015 14:25</td>
+      <td>8/12/2015 14:43</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-54</td>
+      <td>visualise data using graphs (should have): scatter plots, time-series plots, pie charts</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>8/12/2015 14:23</td>
+      <td>1/3/2016 1:42</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-51</td>
+      <td>visualise data using graphs</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>8/12/2015 14:23</td>
+      <td>28/1/2016 20:38</td>
+   </tr>
+   <tr>
+      <td>Epic</td>
+      <td>UCL-50</td>
+      <td>Clean the data</td>
+      <td>To Do</td>
+      <td>Unresolved</td>
+      <td>8/12/2015 14:22</td>
+      <td>8/12/2015 14:25</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-49</td>
+      <td>support cleaning of missing values by interpolation</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>8/12/2015 14:22</td>
+      <td>28/1/2016 20:43</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-48</td>
+      <td>support cleaning of missing values by filling with the most recent value</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>8/12/2015 14:21</td>
+      <td>22/1/2016 14:56</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-47</td>
+      <td>support cleaning of missing values by inserting an average</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>8/12/2015 14:21</td>
+      <td>24/1/2016 20:36</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-46</td>
+      <td>show rows with missing values in specified column</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>8/12/2015 14:21</td>
+      <td>26/1/2016 17:48</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-45</td>
+      <td>show rows with invalid numbers in specified column</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>8/12/2015 14:21</td>
+      <td>26/1/2016 17:48</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-44</td>
+      <td>inserting user-specified values as a universal cleaning operation</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>8/12/2015 14:21</td>
+      <td>24/1/2016 20:04</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-43</td>
+      <td>removing rows as a universal cleaning operation</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>8/12/2015 14:21</td>
+      <td>22/1/2016 1:36</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-42</td>
+      <td>User can specify encoding and other options on upload screen</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>7/12/2015 22:53</td>
+      <td>11/1/2016 17:16</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-41</td>
+      <td>Project Video</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>1/12/2015 14:43</td>
+      <td>11/12/2015 20:47</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-40</td>
+      <td>Export data in JSON or CSV</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>1/12/2015 14:39</td>
+      <td>11/1/2016 17:16</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-39</td>
+      <td>First end-to-end data cleaning use case</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>1/12/2015 14:36</td>
+      <td>28/1/2016 20:38</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-38</td>
+      <td>Explore and select UI framework</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>1/12/2015 14:33</td>
+      <td>5/12/2015 19:07</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-37</td>
+      <td>Create initial UI for testing</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>1/12/2015 14:33</td>
+      <td>7/12/2015 10:54</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-36</td>
+      <td>The DCS shall allow users to specify variable names and types.</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>1/12/2015 14:30</td>
+      <td>11/1/2016 17:16</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-35</td>
+      <td>First Github commit</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>24/11/2015 14:50</td>
+      <td>29/11/2015 21:39</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-34</td>
+      <td>Deploy skeleton into a VM</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>24/11/2015 14:48</td>
+      <td>29/11/2015 21:39</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-33</td>
+      <td>Build skeleton infrastructure</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>24/11/2015 14:47</td>
+      <td>26/11/2015 12:52</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-32</td>
+      <td>Investigate Flask</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>24/11/2015 14:45</td>
+      <td>26/11/2015 12:52</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-31</td>
+      <td>Review Seldon 0.99 Python Pipelines</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>17/11/2015 15:17</td>
+      <td>20/1/2016 14:25</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-30</td>
+      <td>Map out the Python module for backend features</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>17/11/2015 15:13</td>
+      <td>4/12/2015 17:46</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-29</td>
+      <td>Investigate graph libraries to minimise front-end UI build</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>17/11/2015 15:06</td>
+      <td>30/11/2015 12:31</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-28</td>
+      <td>Outline the architecture</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>17/11/2015 14:51</td>
+      <td>24/11/2015 14:35</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-27</td>
+      <td>Investigate Pandas</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>17/11/2015 14:51</td>
+      <td>24/11/2015 14:35</td>
+   </tr>
+   <tr>
+      <td>Sub-task</td>
+      <td>UCL-26</td>
+      <td>UCL-15 Ask TA/Dean about possibility of UCL hosted dev server</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>30/10/2015 14:58</td>
+      <td>17/11/2015 14:47</td>
+   </tr>
+   <tr>
+      <td>Sub-task</td>
+      <td>UCL-25</td>
+      <td>UCL-19 Prepare Interview Questions</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>30/10/2015 14:55</td>
+      <td>17/11/2015 14:47</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-24</td>
+      <td>Remove references to other products in features document</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>30/10/2015 14:49</td>
+      <td>30/10/2015 14:55</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-23</td>
+      <td>Bi-weekly Report</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>29/10/2015 10:46</td>
+      <td>1/11/2015 15:51</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-22</td>
+      <td>Trying some of the techniques tools on the sample dataset [AZURE]</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>27/10/2015 15:03</td>
+      <td>17/11/2015 14:48</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-21</td>
+      <td>Trying some of the techniques tools on the sample dataset [ZEPPLIN]</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>27/10/2015 15:03</td>
+      <td>17/11/2015 14:48</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-20</td>
+      <td>Trying some of the techniques tools on the sample dataset [JASP]</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>27/10/2015 15:00</td>
+      <td>12/11/2015 20:03</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-19</td>
+      <td>Interview the company about potential features and data cleaning process</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>27/10/2015 14:58</td>
+      <td>17/11/2015 14:47</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-18</td>
+      <td>Send the questionnaire and collate results</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>27/10/2015 14:57</td>
+      <td>28/1/2016 20:38</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-17</td>
+      <td>Github setup and sandbox</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>20/10/2015 16:49</td>
+      <td>27/10/2015 7:46</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-16</td>
+      <td>Create preliminary content and load onto project website for university</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>20/10/2015 16:38</td>
+      <td>26/10/2015 17:40</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-15</td>
+      <td>Setting up a dev server for collaboration and demos</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>20/10/2015 16:34</td>
+      <td>17/11/2015 14:47</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-14</td>
+      <td>Wireframes of potential UI/UX</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>20/10/2015 16:32</td>
+      <td>18/11/2015 15:33</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-13</td>
+      <td>Look at outcomes of the Springleaf competition</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>20/10/2015 16:30</td>
+      <td>27/10/2015 14:54</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-12</td>
+      <td>Find another cleaner dataset for testing purposes</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>20/10/2015 16:29</td>
+      <td>26/10/2015 22:12</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-11</td>
+      <td>Document the options / choices to be made for the final solution</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>20/10/2015 16:28</td>
+      <td>22/10/2015 11:33</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-10</td>
+      <td>Bi-Weekly Report</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>13/10/2015 21:01</td>
+      <td>20/10/2015 15:58</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-9</td>
+      <td>Requirements questionnaire for Seldon users</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>13/10/2015 16:48</td>
+      <td>23/10/2015 17:13</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-8</td>
+      <td>Initial data analysis tests in Zeppelin (or another tool)</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>13/10/2015 16:47</td>
+      <td>20/10/2015 16:26</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-7</td>
+      <td>Initial data analysis tests in JASP</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>13/10/2015 16:43</td>
+      <td>20/10/2015 15:57</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-6</td>
+      <td>Research data cleaning methods</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>13/10/2015 16:36</td>
+      <td>20/10/2015 16:26</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-5</td>
+      <td>Research data analysis methods</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>13/10/2015 16:34</td>
+      <td>19/10/2015 13:50</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-4</td>
+      <td>Research Kaggle knowledge sources</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>13/10/2015 16:29</td>
+      <td>17/11/2015 14:48</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-3</td>
+      <td>Investigate Amazon ML ETL features</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>13/10/2015 16:28</td>
+      <td>15/10/2015 11:03</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-2</td>
+      <td>Investigate Azure ML ETL features</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>13/10/2015 16:27</td>
+      <td>15/10/2015 11:03</td>
+   </tr>
+   <tr>
+      <td>Story</td>
+      <td>UCL-1</td>
+      <td>Download kaggle data</td>
+      <td>Done</td>
+      <td>Done</td>
+      <td>13/10/2015 8:40</td>
+      <td>13/10/2015 17:35</td>
+   </tr>
+</table>
+
+Term 1 Archive
 
 <table class="table table-bordered table-hover table-condensed tasks">
 <tbody><tr class="headerRow">
