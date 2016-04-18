@@ -277,7 +277,6 @@ a, a:visited, h1, h2, h3, h6 {
 .productDescriptor {
   flex-grow: 1;
   min-width: 150px;
-  padding-bottom: 20px;
 }
 
 .teamDescriptor {
@@ -347,6 +346,30 @@ a, a:visited, h1, h2, h3, h6 {
 	left: 0;
     width: 100%;
     height: 100%
+}
+
+.videoWrapper1 {
+  position:relative;
+  padding-bottom:56.25%;
+  padding-top:0;
+  height:0;
+  overflow:hidden;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.videoWrapper1 iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  max-width: none;
+}
+
+.videoWrapperOuter {
+  margin: 0 auto;
+  max-width: 800px;
 }
 
 .btn.download {

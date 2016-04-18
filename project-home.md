@@ -38,10 +38,10 @@ I am a competitive individual with a diverse range of skills, the most prominent
 
 ### **Bandi Enkh-Amgalan** --- Technical Lead, Client Liaison
 
-I am looking forward to work on this project. I have always held interest in machine learning and big data because they are exciting areas at the forefront of computer science research having only recently broke their way into commercial application. I hope to gain loads of experience and technical knowledge and collaborate with my teammates to build an impressive product that caters to our client. 
+I am looking forward to work on this project. I have always held interest in machine learning and big data because they are exciting areas at the forefront of computer science research having only recently broke their way into commercial application. I hope to gain loads of experience and technical knowledge and collaborate with my teammates to build an impressive product that caters to our client.
 
 <img src="assets/mb_amber.png" width="50px">
 
-### **Gordon Cheng** --- UI/UX Lead, Chief Editor
+### **Gordon Cheng** --- UI Lead, Chief Editor
 
 As the Chief Editor of the team, I will be responsible for the documentation of this project and maintaining this website. My personal interests include UI and web design, and I look forward to putting my skills in these areas to use. Previous projects I have worked on include an iOS app for a hospital which allowed doctors to refer patients to different departments. I am excited to be given the opportunity to work on this project revolving around data science. In the course of this project, I hope to gain knowledge and skills in this area and strengthen my project management skills.
