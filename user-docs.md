@@ -616,7 +616,7 @@ This gives you 2 options, *forward fill* and *backward fill*. Their behaviour is
 
 ### Impute Using Interpolation
 
-*To be written...*
+This option fills in missing values by interpolating them where possible. Note that for the Spline method, you are limited to an order of 1 - 5. The polynomial method also has a limit of 1 - 20. Interpolating using high order polynomials can be extremely resource intensive, especially for large datasets and can result in the crashing of the system. Avoid using interpolation for large datasets.
 
 <a class="anchor" id="clean-missing-data-custom"></a>
 
