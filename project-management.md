@@ -34,7 +34,7 @@ To enable the team to communicate with the client effectively, we used Slack as 
 
 <a class="anchor" id="work-packages"></a>
 
-## Work Packages Completed By Team Members
+## Work Packages Completed
 
 ### **Shivam Dhall** - Group Manager & Chief Researcher
 

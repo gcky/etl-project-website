@@ -9,16 +9,6 @@ $normalLinear-width: 675px;
 
 @charset "utf-8";
 
-@font-face {
-    font-family: NexaBold;
-    src: url(Nexa-Bold.otf);
-}
-
-@font-face {
-    font-family: NexaLight;
-    src: url(Nexa-Light.otf);
-}
-
 .material-icons { position: relative; top: 2px;}
 .material-icons.md-16 { font-size: 16px; }
 
@@ -50,12 +40,17 @@ hr {
     padding-right: 40px;
 }
 
-#ucl {
+.footerLogo {
     height: $logo-height;
     display: inline;
     margin-top: 10px;
     margin-right: 10px;
     vertical-align: inherit;
+}
+
+.footerCube {
+  height: 30px;
+  margin-left: -5px;
 }
 
 #seldon {
@@ -91,9 +86,9 @@ a.anchor {
 
 /* Title text displayed on the top of page. */
 .siteTitle {
-    font-family: NexaBold, sans-serif;
+    font-family: Raleway, Arial, sans-serif;
     font-size: 2.8em;
-    font-weight: 300;
+    font-weight: 800;
     margin: 0 auto;
     text-decoration: none;
     color: white !important;
@@ -132,12 +127,11 @@ h1 {
 
 /* Subheadings in content. */
 h2 {
-    font-family: Roboto Mono, Source Sans Pro, Work Sans, NexaLight, sans-serif;
+    font-family: Work Sans, NexaLight, sans-serif;
     text-align: left;
     font-size: 1.5em;
     font-weight: bold;
     color: #455A64;
-    word-spacing: -5px;
     letter-spacing: 0px;
     padding-top: 20px;
 }
@@ -180,8 +174,7 @@ h6 {
     width: 100%;
     top: 0;
     z-index: 10;
-    background-color: rgba(250, 247, 243, 0.95);
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    background-color: #283593;
 }
 
 #normalMenu {
@@ -206,6 +199,8 @@ div.barWrapper {
 #smallLogo {
     display: inline-block;
     position: relative;
+    padding-top: 12px;
+    padding-bottom: 8px;
 }
 
 #fullWidthBar {
@@ -216,7 +211,7 @@ div.barWrapper {
     display: inline;
     list-style-type: none;
     border-right: 1px solid lightgray;
-    border-bottom: none !important;
+    /*border-bottom: none !important;*/
     padding: 2px 5px 2px 5px !important;
 }
 
@@ -226,7 +221,7 @@ div.barWrapper {
 
 #fullWidthBar li a {
     font-size: 1em;
-    color: darkslategray;
+    color: white;
     white-space: nowrap;
 }
 
@@ -262,30 +257,30 @@ a.menuItem {
 
 @keyframes fadeInMenu {
     0% {
-        display: none; 
+        display: none;
         opacity: 0;
     }
     1% {
-        display: inline; 
+        display: inline;
         opacity: 0;
     }
     100% {
-        display: inline; 
+        display: inline;
         opacity: 1;
     }
 }
 
 @keyframes fadeInBackground {
     0% {
-        display: none; 
+        display: none;
         opacity: 0;
     }
     1% {
-        display: inline; 
+        display: inline;
         opacity: 0;
     }
     100% {
-        display: inline; 
+        display: inline;
         opacity: 0.85;
     }
 }
@@ -546,7 +541,14 @@ table.invisible, table.invisible td {
 }
 
 .tasks tbody tr td {
-    
+
+}
+
+#forum_embed {
+  max-width: none;
+  max-height: none;
+  width: 100%;
+  height: 900px;
 }
 
 /* RESPONSIVE DESIGN */
@@ -577,9 +579,6 @@ table.invisible, table.invisible td {
 }
 
 @media screen and (max-width: 730px) {
-    .headerContentWrapper {
-        padding: 10px 0;
-    }
     #homeHead .headerContentWrapper {
         margin: 40px auto;
     }
@@ -607,9 +606,9 @@ table.invisible, table.invisible td {
     }
 }
 
-@media 
-(-webkit-min-device-pixel-ratio: 2), 
-(min-resolution: 192dpi) { 
+@media
+(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
     p.siteSubTitle {
         font-weight: 300;
     }
@@ -643,10 +642,9 @@ table.invisible, table.invisible td {
 #showButtonA label span {
     padding: 8px 0px;
     display: block;
-    color: #37474F;
+    color: white;
     font-family: Work Sans, Roboto, sans-serif;
     font-size: 1.1em;
-    background-color: none;
 }
 
 #showButtonA {
@@ -692,7 +690,7 @@ table.invisible, table.invisible td {
 
 @keyframes slideInMenu {
     0%{
-        display: none; 
+        display: none;
         opacity: 0;
         top: 80px;
     }
@@ -800,7 +798,7 @@ td, th {
     font-size: 0.9em;
 }
 
-/* 
+/*
 Syntax Highlighting
 Modified from: https://github.com/mojombo/tpw/blob/master/css/syntax.css
 */
