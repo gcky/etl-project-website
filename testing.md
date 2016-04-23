@@ -5,31 +5,28 @@ title: Testing | ETL for Data Science
 
 # Testing and Evaluation
 
-To ensure that our product meets quality standards, we will be placing a heavy emphasis on software testing throughout development. This page details the testing strategies for this project. Click the buttons below to jump to the corresponding section.
+To ensure that our system meets quality standards, we will be placing a heavy emphasis on software testing throughout development. This page details the testing strategies for this project. Click the buttons below to jump to the corresponding section.
 
 <a class="btn-resp" href="#unit-testing">1. Unit Testing</a>
 <a class="btn-resp" href="#functional-testing">2. Functional Testing</a>
-<a class="btn-resp" href="#uat">3. UAT</a>
-<a class="btn-resp" href="#testing-results">4. Testing Results</a>
+<a class="btn-resp" href="#compatibility">3. Compatibility Testing</a>
+<a class="btn-resp" href="#uat">4. User Acceptance Testing</a>
 <a class="btn-resp" href="#requirements-evaluation">5. Requirements Evaluation</a>
+<a class="btn-resp" href="#performance">6. Performance Testing</a>
 
 <a class="anchor" id="unit-testing"></a>
 
 ## Unit Testing
 
-Unit testing will be used to ensure that components within the backend and front-end are functioning properly. They will be automatically run whenever changes are made to the source code to ensure the changes did not break existing functionality.
+To ensure the integrity, completeness and correctness of our software, we developed a individual test suites which consisted of unit tests for both our front and back-ends. After developing a feature we would carry out regression testing by automatically running the test suites to ensure no new bugs are introduced.
 
-### Angular.js front-end
+### Back-end - Python Modules
 
-Angular.js documentation recommends the use of the Jasmine behavior driven development framework as well as the Karma command line tool to run the tests written in Jasmine to run on different browsers. We will be following this recommendation.
+Since our backend consisted of Python modules, we used a full-featured testing tool called Pytest to create our unit tests. While developing the test suite for the backend, we made sure to individually test each python function with extreme, normal and abnormal data to ensure that our software was robust enough. In total we had 100 unit tests in our test suite.
 
-### Flask back-end
+### Front-end - Angular.js
 
-The Flask web application framework supports unit testing by simulating HTTP clients. Unit tests can then be written in any Python testing framework of our choice, and the Flask documentation shows examples using the testing module built into Python called unittest. However, we will be using a popular alternative to the default testing module, called py.test. The advantage of using py.test is that it does not require the developer to write any boilerplate (repetitive) code thus saving time.  
-
-### Python data cleaning package
-
-Unit tests for the Python data cleaning package will also be written using py.test.
+To construct unit tests for the front-end, we used Jasmine which is a behaviour driven development framework as well as Karma which is a test runner that is framework agnostic. we used Karma to run the tests written in Jasmine to run on different browsers. While constructing the unit tests we tried to test most of the important features of our UI. Overall we have 75 tests in our suite.
 
 <br><a class="btn-resp" href="#top">^ Back to Top</a>
 
@@ -39,27 +36,10 @@ Unit tests for the Python data cleaning package will also be written using py.te
 
 ## Integration & Functional Testing
 
-Integration testing will be used to ensure that the back-end and front-end components are functioning properly as an interconnected system. Functional testing will be used to ensure that the functional requirements of the product have been fulfilled. They will both be accomplished in this project by performing end to end testing on the Angular.js front-end.
+Functional testing is used as a quality assurance process for a software system.It refers to activities that verify a specific action or function of the code. Functional test tends to answer the questions like “can the user do this” or “does this particular feature work”.  In order to carry out our functional testing, we used our requirements specification to construct a series of test cases which were used for manual black-box testing.
 
-Selenium is an open-source testing framework that is frequently used for testing web applications but we will be using Protractor, the end to end testing framework recommended by the Angular.js documentation. Protractor is specifically designed for testing Angular.js applications and actually uses the server component of the Selenium framework. Protractor simulates the user’s interactions with the user interface across all major browsers and tests the behavior of the application. Protractor tests uses the same syntax as Jasmine, our choice of unit testing framework for Angular.js, so it should make writing test code more convenient.
-
-<br><a class="btn-resp" href="#top">^ Back to Top</a>
-
-<hr>
-
-<a class="anchor" id="uat"></a>
-
-## User Acceptance Testing (UAT)
-
-To ensure that our clients are satisfied with our product will be conducting UAT on a regular basis with our clients at Seldon. We aim to begin regularly incorporating UAT into our weekly Scrum sprints when we have completed the user interface in the front-end, and interaction with the system becomes possible. The UAT will be thoroughly planned in advance of the meetings, with test scenarios written in a format similar to use cases. We will only consider new features we develop to be completed the our clients have accepted them in the user acceptance tests. There is a chance we may reduce the frequency of UAT to every two weeks, if we see that not enough progress can be made to show for in a weekly sprint.
-
-<br><a class="btn-resp" href="#top">^ Back to Top</a>
-
-<hr>
-
-<a class="anchor" id="testing-results"></a>
-
-## Manual Functional Testing Results
+### Manual Testing
+The test cases we used were built around the specification, system requirements and design parameters. For each test case we selected both valid and invalid inputs in order to determine whether the system produces the correct desired output. Each of the test cases were carried out manually, the type of test carried out and the result of each test is recorded in the table below:
 
 <table>
 <thead><tr class="headerRow"><td>Test Scenario</td><td>Test Data</td><td>Test Data Type</td><td>Expected Results</td><td>Actual Results</td><td>Pass/Fail</td></tr></thead><tbody>
@@ -156,6 +136,36 @@ To ensure that our clients are satisfied with our product will be conducting UAT
  <tr><td>Save the dataframe as a CSV file</td><td>Dataset</td><td>Normal</td><td>Dataset is downloaded as a CSV file</td><td>As expected</td><td>Pass</td></tr>
  <tr><td>Save the dataframe as a JSON file</td><td>Dataset</td><td>Normal</td><td>Dataset is downloaded as a JSON file</td><td>As expected</td><td>Pass</td></tr>
 </tbody></table>
+
+**N.B.** Most of the failures has since been fixed.
+
+<br><a class="btn-resp" href="#top">^ Back to Top</a>
+
+<hr>
+
+<a class="anchor" id="compatibility"></a>
+
+## Compatibility Testing
+
+With all the different operating systems and web browsers available, it is very important to these the compatibility of an application. Below are some of the tests we carried out:
+
+### Browser compatibility
+
+Ensuring that a web application works on the most widely used browsers is extremely important, this is because applications can behave differently dependent on browsers they are run on. It is also the case that different browsers have different configurations and settings that a web page should be compatible with. We therefore tested our web application on Internet explorer, Firefox, Chrome, Safari, and Edge with different versions.
+
+### OS compatibility
+
+In some cases a functionality of a web application may not be compatible with all operating systems. Technologies such as graphic designs and interface calls may not be available in all Operating Systems. We therefore tested our application on Windows, Mac and Linux systems.
+
+<br><a class="btn-resp" href="#top">^ Back to Top</a>
+
+<hr>
+
+<a class="anchor" id="uat"></a>
+
+## User Acceptance Testing (UAT)
+
+This is the last phase of the software engineering process. During UAT the completed software is tested by potential users of the system to ensure it can handle required tasks in real-world scenarios. In order to carry out UAT we designed several test cases which covered most of our key requirements. We then presented these test cases to our client who in turn decided to pass them on to potential users of the system to carry out the UAT. Our client informed us that they will send us the feedback they may receive regarding bugs and usability. However it is worth mentioning that our clients were extremely pleased with each individual feature offered by the system as well as the overall User Experience.
 
 <br><a class="btn-resp" href="#top">^ Back to Top</a>
 
@@ -601,5 +611,41 @@ To ensure that our clients are satisfied with our product will be conducting UAT
 <td>Not Implemented</td>
 </tr>
 </tbody></table>
+
+<br><a class="btn-resp" href="#top">^ Back to Top</a>
+
+<hr>
+
+<a class="anchor" id="performance"></a>
+
+## Performance Testing
+
+To make sure the web application performs well with reasonably sized datasets, we tested the final system with a series of artificially generated datasets, ranging from less than 1MB in size to over 100MB. We tested 5 main functionalities of the system, including:
+
+* Upload the dataset
+* Impute missing values in a column (with 95.8% values missing) with the column mode
+* Perform a find and replace operation using regex on a column
+* Generate a scatter plot between 2 numerical columns
+* Split a column into 3 columns using a delimiter
+
+We measured the time the system takes to perform each of these operations.
+
+### Results
+
+<div class="imgCapContainer">
+    <img src="{{site.baseurl}}/assets/performance1.png" alt="result1"
+     class="titleImage wideImage">
+     <br>
+     Results of performance testing.
+</div>
+
+<div class="imgCapContainer">
+    <img src="{{site.baseurl}}/assets/performance2.png" alt="result2"
+     class="titleImage wideImage">
+     <br>
+     The effect of file size on time taken by each operation.
+</div>
+
+**N.B.** Most operations performed by the system works on *columns* rather than *rows* of a dataset so the performance of the system depends more on the number of rows in the dataset.
 
 <br><a class="btn-resp" href="#top">^ Back to Top</a>

@@ -103,7 +103,7 @@ If you select a large file to upload, the advanced options section will expand a
 
 In this situation, you can choose to upload your file anyway. However, expect slower performances from Willow. Alternatively, if you don't need all of the data in the file, you can select a random sample of your dataset by specifying a percentage (0, 100] under *Advanced Options*. You can also select a seed so you can retrieve the same sample again in the future.
 
-To ensure that you have a good experience with Willow, it is recommended that you only upload files that are less than **100MB**.
+To ensure that you have a good experience with Willow, it is recommended that you only upload files that are less than **80MB**.
 
 <a class="anchor" id="load-upload-commonIssues"></a>
 
@@ -943,7 +943,7 @@ You can also export a queue for use in a later date or with another dataset. To 
 ## *Highway to the Danger Zone*
 
 <div class="btn btn-alert">
-<i class="material-icons md-16">error_outline</i> This functionality is for developers. Only use it if you know what you're doing as it may result in unintended alterations to your system and lead to the complete loss of your data.
+<i class="material-icons md-16">error_outline</i> This functionality is meant for developers. Only use it if you know what you're doing as it may result in unintended alterations to your system and lead to the complete loss of your data.
 </div>
 
 This feature allows you to execute Python statements to directly manipulate the dataset. This card appears under the **Operate** tab. To show/hide this card, click the word 'and' in the table navigation bar.
