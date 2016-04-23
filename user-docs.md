@@ -3,10 +3,6 @@ layout: docs
 title: User Guide | Willow
 ---
 
-<div class="btn btn-alert">
-This page is a work-in-progress, descriptions may be incomplete/inaccurate. If you have any queries, please contact the team via our GitHub repo.
-</div>
-
 <a class="anchor" id="install"></a>
 
 # Installing and Running Willow
@@ -31,7 +27,7 @@ This page is a work-in-progress, descriptions may be incomplete/inaccurate. If y
 
 - Operating System: Mac OS X 10.7+, Windows 7+, Linux
 - Memory: 4GB+
-- Browser: Chrome 45+, Safari 9+, Firefox 42+, Edge 25+, IE 11+ (JavaScript Enabled)
+- Browser (JavaScript Enabled): Chrome 45+, Safari 9+, Firefox 42+, Edge 25+, IE 11+
 - VirtualBox and Vagrant installed
 
 <a class="anchor" id="install-tungsten"></a>

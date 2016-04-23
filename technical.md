@@ -25,7 +25,7 @@ As stated earlier [D3.js](http://d3js.org) is a JavaScript library for manipulat
 
 ### **Plotly.js**
 
-[Plotly.js](http://plotly.js) is a high level, declarative charting library that is built on top of d3.js and stac.gl. One of the main reasons we decided to use plotly.js as our graphing library is because it supports over 20 different chart types, including 3D plots, geographic maps, and statistical charts like density plots, histograms, box plots, and contour plots. 
+[Plotly.js](http://plotly.js) is a high level, declarative charting library that is built on top of d3.js and stac.gl. One of the main reasons we decided to use plotly.js as our graphing library is because it supports over 20 different chart types, including 3D plots, geographic maps, and statistical charts like density plots, histograms, box plots, and contour plots.
 
 <div class="imgCapContainer">
     <img src="{{site.baseurl}}/assets/plotlyjs-logo.png" alt="Cleaning Tab"
@@ -46,7 +46,7 @@ Finally plotly.js charts are described declaratively as JSON objects, and every 
 
 ## UI Frameworks/Libraries
 
-As the user interface is not the main focus of this project, we decided to utilise an existing UI framework develop the UI for the front-end of our system. We believe that this will speed up the development of the system and gives us more time and effort to work on the back-end features. 
+As the user interface is not the main focus of this project, we decided to utilise an existing UI framework develop the UI for the front-end of our system. We believe that this will speed up the development of the system and gives us more time and effort to work on the back-end features.
 
 We decided that we will be using the Material Design language for our UI. Material Design is a visual language that was developed by Google and put emphasis on using material as the metaphor; using bold, graphic, intentional elements; and using motion to provide meaning. We believe that this is a good choice not only because it is a rigid  design language, but also because there is a huge collection of UI frameworks based on the Material Design specification. This meant that we were able to choose the one that is most suitable for this project. We considered several of such frameworks, including Material Design Lite, Materialize, and Angular Material.
 
@@ -78,7 +78,7 @@ MDL is maintained by Google and Materialize was created by a team of students fr
 
 ### **Angular Material**
 
-[Angular Material](https://material.angularjs.org/) is a UI library that depends on AngularJS as the name suggests. This alone makes it a compelling choice for our project as we have decided, when designing the system architecture, to use AngularJS as the front-end web-app framework. 
+[Angular Material](https://material.angularjs.org/) is a UI library that depends on AngularJS as the name suggests. This alone makes it a compelling choice for our project as we have decided, when designing the system architecture, to use AngularJS as the front-end web-app framework.
 
 Instead of relying on declaring CSS classes on HTML elements, Angular Material allows the use of directives. This makes it a lot easier to manage the HTML code. For example, creating a button only requires this line of code:
 
@@ -98,9 +98,9 @@ In the end, we decided to use Angular Material over MDL or Materialized as we th
 
 ## Deployment
 
-Since our final product will be a web application with a somewhat complex backend architecture, we need to provide a way for users to access the application. The standard approach is hosting the application publicly and having it accessible on the Internet, but not only would that introduce issues such as security, performance and scalability, it is not the way our client envisioned the application. Instead, they wanted a system that users can setup and run locally. 
+Since our final product will be a web application with a somewhat complex backend architecture, we need to provide a way for users to access the application. The standard approach is hosting the application publicly and having it accessible on the Internet, but not only would that introduce issues such as security, performance and scalability, it is not the way our client envisioned the application. Instead, they wanted a system that users can setup and run locally.
 
-Of course, we cannot burden users with the tedious task of manually deploying the system themselves, as that would entail installing, setting up and configuring all the dependencies needed to duplicate the environment needed to serve the application. The solution, suggested by our client, is to use a virtual development environment tool such as Vagrant or Docker. With this method, the user only needs to download and run a VM (VM) that already contains all the components of our application installed, configured and running. 
+Of course, we cannot burden users with the tedious task of manually deploying the system themselves, as that would entail installing, setting up and configuring all the dependencies needed to duplicate the environment needed to serve the application. The solution, suggested by our client, is to use a virtual development environment tool such as Vagrant or Docker. With this method, the user only needs to download and run a VM (VM) that already contains all the components of our application installed, configured and running.
 
 <div class="imgCapContainer">
     <img src="{{site.baseurl}}/assets/vagrant.png" alt="Cleaning Tab"
@@ -111,8 +111,8 @@ Of course, we cannot burden users with the tedious task of manually deploying th
 
 We decided to use Vagrant for virtual deployment. It uses the Oracle VirtualBox hypervisor by default, and supports multiple platforms including Windows, OS X and Linux. The only requirement for deploying with Vagrant is that the user has Vagrant installed on his/her system.
 
-We currently have a demo of a deployment process that uses Vagrant. For the demo, we are using Ubuntu as a base VM, and a provisioning script in bash installs and configures dependencies on startup. Vagrant automatically performs port mapping, allowing the user to access the application on a port on his/her host machine. 
+We currently have a demo of a deployment process that uses Vagrant. For the demo, we are using Ubuntu as a base VM, and a provisioning script in bash installs and configures dependencies on startup. Vagrant automatically performs port mapping, allowing the user to access the application on a port on his/her host machine.
 
-In our deployment demo, the update process is quite inconvenient for the user, as the user must pull changes from the GitHub remote, which changes the contest of the directory containing the web application inside the VM. Our current approach of using a default base box such as Ubuntu and running provisioning scripts thus does not handle updates well and is also quite slow to start up, so we will eventually start creating and hosting our own custom VM images once we are ready for our first release next term. With this configuration, Vagrant would download our custom VM images from our server, and run the VM without the need for provisioning. Vagrant would also handle updates on behalf of the user by automatically checking and downloading any available new releases of our VM. 
+In our deployment demo, the update process is quite inconvenient for the user, as the user must pull changes from the GitHub remote, which changes the contest of the directory containing the web application inside the VM. Our current approach of using a default base box such as Ubuntu and running provisioning scripts thus does not handle updates well and is also quite slow to start up, so we will eventually start creating and hosting our own custom VM images once we are ready for our first release next term. With this configuration, Vagrant would download our custom VM images from our server, and run the VM without the need for provisioning. Vagrant would also handle updates on behalf of the user by automatically checking and downloading any available new releases of our VM.
 
 <br><a class="btn-resp" href="#top">^ Back to Top</a>
