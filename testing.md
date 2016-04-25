@@ -10,9 +10,9 @@ To ensure that our system meets quality standards, we will be placing a heavy em
 <a class="btn-resp" href="#unit-testing">1. Unit Testing</a>
 <a class="btn-resp" href="#functional-testing">2. Functional Testing</a>
 <a class="btn-resp" href="#compatibility">3. Compatibility Testing</a>
-<a class="btn-resp" href="#uat">4. User Acceptance Testing</a>
-<a class="btn-resp" href="#requirements-evaluation">5. Requirements Evaluation</a>
-<a class="btn-resp" href="#performance">6. Performance Testing</a>
+<a class="btn-resp" href="#requirements-evaluation">4. Requirements Evaluation</a>
+<a class="btn-resp" href="#performance">5. Performance Testing</a>
+<a class="btn-resp" href="#uat">6. Acceptance Testing</a>
 
 <a class="anchor" id="unit-testing"></a>
 
@@ -28,13 +28,15 @@ Since our backend consisted of Python modules, we used a full-featured testing t
 
 To construct unit tests for the front-end, we used Jasmine which is a behaviour driven development framework as well as Karma which is a test runner that is framework agnostic. we used Karma to run the tests written in Jasmine to run on different browsers. While constructing the unit tests we tried to test most of the important features of our UI. Overall we have 75 tests in our suite.
 
+The locations of these unit tests can be found in the [Project File Structure]({{site.baseurl}}/dev/files.html) page of our technical documentation.
+
 <br><a class="btn-resp" href="#top">^ Back to Top</a>
 
 <hr>
 
 <a class="anchor" id="functional-testing"></a>
 
-## Integration & Functional Testing
+## Functional Testing
 
 Functional testing is used as a quality assurance process for a software system.It refers to activities that verify a specific action or function of the code. Functional test tends to answer the questions like “can the user do this” or “does this particular feature work”.  In order to carry out our functional testing, we used our requirements specification to construct a series of test cases which were used for manual black-box testing.
 
@@ -161,19 +163,11 @@ In some cases a functionality of a web application may not be compatible with al
 
 <hr>
 
-<a class="anchor" id="uat"></a>
-
-## User Acceptance Testing (UAT)
-
-This is the last phase of the software engineering process. During UAT the completed software is tested by potential users of the system to ensure it can handle required tasks in real-world scenarios. In order to carry out UAT we designed several test cases which covered most of our key requirements. We then presented these test cases to our client who in turn decided to pass them on to potential users of the system to carry out the UAT. Our client informed us that they will send us the feedback they may receive regarding bugs and usability. However it is worth mentioning that our clients were extremely pleased with each individual feature offered by the system as well as the overall User Experience.
-
-<br><a class="btn-resp" href="#top">^ Back to Top</a>
-
-<hr>
-
 <a class="anchor" id="requirements-evaluation"></a>
 
 ## Requirements Evaluation
+
+Throughout the development of the system, we evaluate the progress and success of the system by referring to our requirements specification for the system and made sure that all must have and should have requirements were implemented. The status of each requirement at the end of the project is listed below:
 
 <table class="table table-bordered table-hover table-condensed">
 <tbody><tr class="headerRow"><td>ID</td>
@@ -628,7 +622,15 @@ To make sure the web application performs well with reasonably sized datasets, w
 * Generate a scatter plot between 2 numerical columns
 * Split a column into 3 columns using a delimiter
 
-We measured the time the system takes to perform each of these operations.
+We measured the time the system takes to perform each of these operations using a stopwatch.
+
+Specification of the machine used for testing:
+
+* MacBook Pro 15-inch (Late 2013)
+* 2.0 GHz (i7-4750HQ) quad-core Intel Core i7 Haswell with 6 MB on-chip L3 and 128 MB L4 cache (Crystalwell)
+* 8 GB built-in onboard RAM
+* Intel Iris Pro 5200 Graphics with DDR3L SDRAM shared with main memory
+* Running on Google Chrome 50
 
 ### Results
 
@@ -643,9 +645,21 @@ We measured the time the system takes to perform each of these operations.
     <img src="{{site.baseurl}}/assets/performance2.png" alt="result2"
      class="titleImage wideImage">
      <br>
-     The effect of file size on time taken by each operation.
+     The effect of file size on the time taken by each operation.
 </div>
 
 **N.B.** Most operations performed by the system works on *columns* rather than *rows* of a dataset so the performance of the system depends more on the number of rows in the dataset.
+
+The results were not surprising to us as most basic operations performs well enough even with a large file size. Some operations are resource intensive in its nature and there's little we can do to improve their performance, but they still work well with smaller datasets. When compared to other software such as OpenRefine and Excel, our system performs as well if not better on some of the features. For example, both OpenRefine and Excel failed to load the 106.8MB file while our system loaded it under 30 seconds. Overall we are satisfied by the performance of our system.
+
+<br><a class="btn-resp" href="#top">^ Back to Top</a>
+
+<hr>
+
+<a class="anchor" id="uat"></a>
+
+## User Acceptance Testing (UAT)
+
+This is the last phase of the software engineering process. During UAT the completed software is tested by potential users of the system to ensure it can handle required tasks in real-world scenarios. In order to carry out UAT we designed several test cases which covered most of our key requirements. We then presented these test cases to our client who in turn decided to pass them on to potential users of the system to carry out the UAT. Our client informed us that they will send us the feedback they may receive regarding bugs and usability. However it is worth mentioning that our clients were extremely pleased with each individual feature offered by the system as well as the overall User Experience.
 
 <br><a class="btn-resp" href="#top">^ Back to Top</a>

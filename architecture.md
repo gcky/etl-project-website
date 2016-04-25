@@ -11,6 +11,7 @@ This page details the research we have done through the course of designing the 
 
 <a class="btn-resp" href="#important-decisions">1. Important Decisions</a>
 <a class="btn-resp" href="#first-iteration">2. First Iteration</a>
+<a class="btn-resp" href="#alterations">3. Alterations During Development</a>
 
 <a class="anchor" id="important-decisions"></a>
 
@@ -135,7 +136,7 @@ This page details the research we have done through the course of designing the 
 			<p>We are also quite aware, through our investigation on Zeppelin, that Apache Spark does not have much built-in functionality and is actually just a bare-bones distributed computing framework. In fact, choosing to use Spark is no different from choosing to implement everything ourselves, except an added bonus of running on top of a scalable platform. </p>
 			<strong>Why not R + its built-in libraries?</strong>
 			<p>Our research revealed that there is actually not much difference in the functionality provided by Pandas and R + its built-in libraries. In fact, R actually has an upper hand in terms of existing functionality over Pandas, because the whole language was created for statistics and data science. </p>
-			<p>However, what made us choose not to use R is because none of us are familiar with the language, so development would obviously be set back as we spend time familiarizing ourselves with the language and the libraries. </p> 
+			<p>However, what made us choose not to use R is because none of us are familiar with the language, so development would obviously be set back as we spend time familiarizing ourselves with the language and the libraries. </p>
 			<strong>Why Pandas?</strong>
 			<p>Pandas, being a data science library for Python, has a lot of built-in functionality (comparable to R) that we can use to very easily fulfill some of our basic functional requirements. However, unlike R, it has an added advantage of being a Python library, a language all of us know. </p>
 			<p>Our client also requested that we use Pandas because their machine learning platform uses Pandas and Python as feature extraction pipelines, and it would be ideal if our solution was compatible with Seldon's platform. </p>
@@ -285,7 +286,7 @@ This page details the research we have done through the course of designing the 
 			<strong>Why not a custom implementation?</strong>
 			<p>It would be a waste of time re-inventing the wheel when there are readily available open-source libraries that we can integrate into our project. Too much development time will be wasted dealing with the complexity of implementing a secure and robust Python execution engine as well as communication protocol.  </p>
 			<strong>Why Jupyter + iPython?</strong>
-			<p>Jupyter + iPython kernel is the de-facto standard notebook software for Python. It is fair to say that there are no competing solutions worth considering, and the fact that it is also included in Seldon's machine learning platform makes it a great choice. </p>	
+			<p>Jupyter + iPython kernel is the de-facto standard notebook software for Python. It is fair to say that there are no competing solutions worth considering, and the fact that it is also included in Seldon's machine learning platform makes it a great choice. </p>
 		</td>
 	</tr>
 </table>
@@ -331,8 +332,8 @@ This page details the research we have done through the course of designing the 
 			<p>A RESTful API is also based around HTTP, and HTTP does not allow servers to push data to clients. Our architecture must handle the situation where a client requests a data processing job that takes a long period of time, and it does not make sense to use a RESTful API, as requests will hang and might even timeout before the backend completes the data processing task. </p>
 			<strong>Why a WebSocket API</strong>
 			<p>Our previous assessment concluded that we ultimately need a protocol that supports pushing of updates to the client and does not enforce the constraint of statelessness, which is an inappropriate constraint for our application. </p>
-			<p>Server push will most likely be a critical capability to enable synchronization of changes made using the notebook interface to the graphical/spreadsheet interface. It would also be required for the live collaboration functionality, although that is a "would have" requirement. </p> 
-			<p>A WebSocket API would fulfill all these requirements. </p>	
+			<p>Server push will most likely be a critical capability to enable synchronization of changes made using the notebook interface to the graphical/spreadsheet interface. It would also be required for the live collaboration functionality, although that is a "would have" requirement. </p>
+			<p>A WebSocket API would fulfill all these requirements. </p>
 		</td>
 	</tr>
 </table>
@@ -375,7 +376,7 @@ This page details the research we have done through the course of designing the 
 			<strong>Why not none/a custom implementation?</strong>
 			<p>It would be a waste of time re-inventing the wheel when there are readily available open-source libraries that we can integrate into our project. </p>
 			<strong>Why Socket.IO?</strong>
-			<p>SocketIO seems to be the only WebSocket library that has an implementation for Flask, our backend. Team members have prior experience using SocketIO. Lastly, SocketIO is backwards compatible with browsers that don't support the WebSocket protocol introduced in HTML5, so using it as a library also adds a layer of robustness and usability to our application. </p>	
+			<p>SocketIO seems to be the only WebSocket library that has an implementation for Flask, our backend. Team members have prior experience using SocketIO. Lastly, SocketIO is backwards compatible with browsers that don't support the WebSocket protocol introduced in HTML5, so using it as a library also adds a layer of robustness and usability to our application. </p>
 		</td>
 	</tr>
 </table>
@@ -399,7 +400,7 @@ This page details the research we have done through the course of designing the 
 	</tr>
 	<tr>
 		<td>
-			asynchronously outside Flask 
+			asynchronously outside Flask
 		</td>
 	</tr>
 	<tr>
@@ -419,7 +420,7 @@ This page details the research we have done through the course of designing the 
 			<p>Although this option would make for a simpler architecture, it is definitely not good practice for the web app to be directly calling intensive data cleaning functions. It is also an approach that does not scale and performs poorly when the backend is under heavy load. Even in a production setting when Flask is deployed with a WSGI server with multiple server processes, a single blocking data processing operation would render an entire worker process unresponsive, and if enough users cause this scenario, the entire backend would become unresponsive. </p>
 			<strong>Why asynchronously outside Flask?</strong>
 			<p>This approach will provide scalability + robustness in the end product, overcoming the shortcomings of running the tasks synchronously within Flask. It should also boost performance as multiple cores and even multiple CPUs can be utilized to perform tasks concurrently. </p>
-			<p>Running the tasks outside Flask asynchronously also enables the infrastructure to support features such as canceling operations before they complete. </p> 
+			<p>Running the tasks outside Flask asynchronously also enables the infrastructure to support features such as canceling operations before they complete. </p>
 		</td>
 	</tr>
 </table>
@@ -443,7 +444,7 @@ This page details the research we have done through the course of designing the 
 	</tr>
 	<tr>
 		<td>
-			service process outside Flask 
+			service process outside Flask
 		</td>
 	</tr>
 	<tr>
@@ -469,8 +470,8 @@ This page details the research we have done through the course of designing the 
 			<strong>Why not a service process outside Flask?</strong>
 			<p>This approach does adhere to best practices unlike using multithreading/multiprocessing, but is quite complicated to implement. With this approach, Flask would spawn a new service that performs all the data processing with every user that connects to the backend, and then communicate with that service using some form of IPC in the server OS such as a socket. There are libraries that could help with messaging such as ZeroMQ, but this approach does not compare to the simplicity of using an existing task manager solution i.e. Celery. </p>
 			<strong>Why Celery?</strong>
-			<p>After looking through developer forums, we saw that Celery is consistently the recommended solution for asynchronous background tasks in Python. Celery handles all aspects of background tasks, such as creating, managing and communicating with worker processes. </p> 
-			<p>Using Celery would allow us to queue all data processing tasks and not worry about the implementation of asynchronous background tasks. Its task management features will also simplify the development of features such as cancelling operations. </p>	
+			<p>After looking through developer forums, we saw that Celery is consistently the recommended solution for asynchronous background tasks in Python. Celery handles all aspects of background tasks, such as creating, managing and communicating with worker processes. </p>
+			<p>Using Celery would allow us to queue all data processing tasks and not worry about the implementation of asynchronous background tasks. Its task management features will also simplify the development of features such as cancelling operations. </p>
 		</td>
 	</tr>
 </table>
@@ -526,9 +527,9 @@ This page details the research we have done through the course of designing the 
 
 ## First Iteration
 
-The user interacts with an Angular.js front-end whose HTML and other assets are served by the Flask web app. The front-end provides both spreadsheet/graphical and notebook style interfaces. 
+The user interacts with an Angular.js front-end whose HTML and other assets are served by the Flask web app. The front-end provides both spreadsheet/graphical and notebook style interfaces.
 
-When the user launches the web app, Socket.IO (also running on Flask) establishes a two-way WebSocket connection between the Angular.js application and the Flask backend. Interactions with the spreadsheet/graphical style interface will be communicated as data retrievel, processing or cleaning requests that will be defined in our WebSocket API. When the backend receives these requests, it asynchronously launches background tasks using Celery. These background tasks will load the server's model of the user data, stored as a cached HDF file on disk, and then run functions from the standalone data cleaning Python package that we will develop on top of Pandas. Once the Celery tasks complete and return results, the backend pushes the results of the operation to the frontend over the WebSocket connection. Angular.js then updates the view in the front-end accordingly. 
+When the user launches the web app, Socket.IO (also running on Flask) establishes a two-way WebSocket connection between the Angular.js application and the Flask backend. Interactions with the spreadsheet/graphical style interface will be communicated as data retrievel, processing or cleaning requests that will be defined in our WebSocket API. When the backend receives these requests, it asynchronously launches background tasks using Celery. These background tasks will load the server's model of the user data, stored as a cached HDF file on disk, and then run functions from the standalone data cleaning Python package that we will develop on top of Pandas. Once the Celery tasks complete and return results, the backend pushes the results of the operation to the frontend over the WebSocket connection. Angular.js then updates the view in the front-end accordingly.
 
 <div class="imgCapContainer">
     <img src="{{site.baseurl}}/assets/dev/architecture1.png" alt="Cleaning Tab"
@@ -541,6 +542,23 @@ Interactions with the notebook style interface, however, does not follow this pr
 
 ### Testing
 
-To ensure that the architecture was designed well, we created a skeleton with all the components in place for testing. We discovered that the design of the architecture was solid except for one issue, the lack of support for asynchronous callbacks in Flask. We assumed that Flask would be queue tasks in Celery and pass in functions to be called back when the tasks complete – a common software pattern in frameworks such as Node.js. However, we realized that Celery runs functions in a separate process altogether ant is unable to call functions inside Flask. Furthermore, our research showed that Flask and most Python applications do not have an event loop and thus cannot support asynchronous callbacks. In the end, we were able to simulate asynchronous behavior by adding Celery, but instead of calling a function in Flask, the task submits a web request to an endpoint with the results data to the Flask app. 
+To ensure that the architecture was designed well, we created a skeleton with all the components in place for testing. We discovered that the design of the architecture was solid except for one issue, the lack of support for asynchronous callbacks in Flask. We assumed that Flask would be queue tasks in Celery and pass in functions to be called back when the tasks complete – a common software pattern in frameworks such as Node.js. However, we realized that Celery runs functions in a separate process altogether ant is unable to call functions inside Flask. Furthermore, our research showed that Flask and most Python applications do not have an event loop and thus cannot support asynchronous callbacks. In the end, we were able to simulate asynchronous behavior by adding Celery, but instead of calling a function in Flask, the task submits a web request to an endpoint with the results data to the Flask app.
+
+<br><a class="btn-resp" href="#top">^ Back to Top</a>
+
+<hr>
+
+<a class="anchor" id="alterations"></a>
+
+## Alterations During Development
+
+<div class="imgCapContainer">
+    <img src="{{site.baseurl}}/assets/dev/architecture2.svg" alt="architecture"
+     class="titleImage">
+    <br>
+    Outline of the final version of our application architecture.
+</div>
+
+The architecture of the system has undergone some changes during the development of the system. The most notable change was the withdrawal of the requirement that the system should provide *both* a pure GUI interface and a notebook style interface for performing operations on datasets. This was because our client felt that the UI of the system is good enough that a notebook style interface would not add much to the user experience of the system. To reflect this change of the system, the parts around the notebook style interface including the iPython notebook and the iPython kernel and web server. A more detailed description of the final architecture design can be found in our [technical documentation]({{site.baseurl}}/dev/architecture.html).
 
 <br><a class="btn-resp" href="#top">^ Back to Top</a>

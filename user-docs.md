@@ -10,8 +10,8 @@ title: User Guide | Willow
 <div class="tableOfContents">
     <ol>
         <li><a href="#install-requirements">System Requirements</a></li>
-        <li><a href="#install-tungsten">Installing Willow</a></li>
-        <li><a href="#install-run">Running Willow</a>
+        <li><a href="#install-tungsten">Install Willow</a></li>
+        <li><a href="#install-run">Run Willow</a>
             <ol type="a">
                 <li><a href="#install-run-start">Start</a></li>
                 <li><a href="#install-run-shut">Shut Down</a></li>
@@ -32,7 +32,7 @@ title: User Guide | Willow
 
 <a class="anchor" id="install-tungsten"></a>
 
-## Installing Willow
+## Install Willow
 
 1. Install **VirtualBox** if not installed already.
   - Go to the [download page](https://www.virtualbox.org/wiki/Downloads).
@@ -49,19 +49,27 @@ title: User Guide | Willow
 
 <a class="anchor" id="install-run"></a>
 
-## Running Willow
+## Run Willow
 
 <a class="anchor" id="install-run-start"></a>
 
 ### Start
 
-To start Willow, open the terminal (Mac) or command prompt (Windows), set the current directory to your Willow folder. Enter and execute `vagrant up`. Open the web browser and navigate to `localhost:5000`
+To start Willow, open the terminal (Mac/Linux) or command prompt (Windows), set the current directory to your Willow folder. Enter and execute:
+
+`vagrant up`
+
+Open the web browser and navigate to:
+
+`localhost:5000`
 
 <a class="anchor" id="install-run-shut"></a>
 
 ### Shut down
 
-To shut down Willow, go to the terminal/command prompt, make sure the current directory is your Willow folder. Enter and execute `vagrant halt`.
+To shut down Willow, go to the terminal/command prompt, make sure the current directory is your Willow folder. Enter and execute:
+
+`vagrant halt`
 
 <a class="anchor" id="install-uninstall"></a>
 
@@ -251,7 +259,12 @@ After Willow has successfully parsed your data file, you will be directed to the
               <li><a href="#clean-custom-transformation-batch">Batch Replacement Queue</a></li>
             </ol>
         </li>
-        <li><a href="#clean-danger-zone"><em>Highway to the Danger Zone</em></a></li>
+        <li><a href="#clean-misc">Miscellaneous</a>
+            <ol type="a">
+              <li><a href="#clean-undo">Undo Operations</a></li>
+              <li><a href="#clean-danger-zone"><em>Highway to the Danger Zone</em></a></li>
+            </ol>
+        </li>
     </ol>
 </div>
 
@@ -371,6 +384,10 @@ This option makes a copy of the currently selected column and insert it to the r
 
 ### Split Column
 
+<div class="btn btn-alert">
+<i class="material-icons md-16">error_outline</i> This is a resource intensive operation, especially on columns that can be split into a large number of columns. Avoid using it on large datasets.
+</div>
+
 This option splits each value in the selected column using a specified delimiter, put them into multiple columns and inserts them to the right of the original. For example, splitting the following column using the delimiter '/'...
 
 <table style="max-width: 200px">
@@ -441,6 +458,10 @@ All empty strings in the newly generated columns will be treated as invalid valu
 <a class="anchor" id="clean-column-operations-combine"></a>
 
 ### Combine Columns
+
+<div class="btn btn-alert">
+<i class="material-icons md-16">error_outline</i> This is a resource intensive operation. Avoid using it on large datasets.
+</div>
 
 This option combines values of multiple columns into a single column using an optional separator and inserts it in the selected column's position.
 
@@ -612,7 +633,11 @@ This gives you 2 options, *forward fill* and *backward fill*. Their behaviour is
 
 ### Impute Using Interpolation
 
-This option fills in missing values by interpolating them where possible. Note that for the Spline method, you are limited to an order of 1 - 5. The polynomial method also has a limit of 1 - 20. Interpolating using high order polynomials can be extremely resource intensive, especially for large datasets and can result in the crashing of the system. Avoid using interpolation for large datasets.
+This option fills in missing values by interpolating them where possible. Note that for the Spline method, you are limited to an order of 1 - 5. The polynomial method also has a limit of 1 - 20. Willow uses the SciPy library for performing interpolation, read more about the behaviour of the different interpolation method [here](http://docs.scipy.org/doc/scipy/reference/interpolate.html).
+
+<div class="btn btn-alert">
+<i class="material-icons md-16">error_outline</i> Interpolation using high order polynomials can be extremely resource intensive, especially for large datasets and can result in the crashing of the system. Avoid using interpolation for large datasets.
+</div>
 
 <a class="anchor" id="clean-missing-data-custom"></a>
 
@@ -853,6 +878,10 @@ When you select a single column of a numeric or string type, the *Categorical Fe
 
 The names of the newly generated columns follow the format: *original name*_*value*. If the *Replace Original Column* option is checked, the original column will be deleted once the operation is complete.
 
+<div class="btn btn-alert">
+<i class="material-icons md-16">error_outline</i> This functionality can take a long time to perform if the column being encoded has a large number of unique values. Consider lowering the number of unique values by using the discretization feature for numerical variables.
+</div>
+
 **N.B.** Invalid/missing value will **not** generate a new column.
 
 <a class="anchor" id="clean-custom-transformation"></a>
@@ -938,9 +967,21 @@ If you wish to do multiple replacements on a column, rather than performing the 
 
 You can also export a queue for use in a later date or with another dataset. To export a queue, click *Export*, a dialog should pop-up with a JSON string, copy and save the string. To import a queue, simply click *Import* and paste in the JSON string. If the dialogs are not appearing, make sure to disable your browser's dialog blocking functionality.
 
+<a class="anchor" id="clean-misc"></a>
+
+## Miscellaneous
+
+<a class="anchor" id="clean-undo"></a>
+
+### Undo Operations
+
+Willow provides a basic undo function if you wish to revert your dataframe to the immediate previous state. To do this, click the <i class="material-icons md-16">undo</i> button in the top bar.
+
+**N.B.** Unlike the ordinary undo function in other software, the undo functionality in Willow is considered an operation in and of itself. This means that after you press undo once, and you press it again, Willow will simply give you the dataframe before the first undo (i.e. it undoes the undo).
+
 <a class="anchor" id="clean-danger-zone"></a>
 
-## *Highway to the Danger Zone*
+### *Highway to the Danger Zone*
 
 <div class="btn btn-alert">
 <i class="material-icons md-16">error_outline</i> This functionality is meant for developers. Only use it if you know what you're doing as it may result in unintended alterations to your system and lead to the complete loss of your data.
